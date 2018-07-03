@@ -1,47 +1,53 @@
 //
-//  CKYSBusinessCollegeFreshListCell.m
-//  TableViewAutoHeight
+//  CKYSBusinessCollegeExcellentCourseCell.m
+//  CKYS
 //
-//  Created by 密码：123 on 18/7/2.
-//  Copyright © 2018年 Yan. All rights reserved.
+//  Created by Yan on 2018/7/3.
+//  Copyright © 2018年 YY. All rights reserved.
 //
 
-#import "CKYSBusinessCollegeFreshListCell.h"
+#import "CKYSBusinessCollegeExcellentCourseCell.h"
+
 #import "Masonry.h"
 #import "Common.h"
 
-#import "CKYSBusinessCollegeFreshListCellDelegate.h"
+#import "CKYSBusinessCollegeExcellentCourseCellDelegate.h"
 #import "CKYSBusinessCollegeFreshListItemCell.h"
 
 #import "UILabel+Category.h"
 #import "UIButton+Title_Image.h"
 #import "UIButton+ImageTitleSpacing.h"
 
-@interface CKYSBusinessCollegeFreshListCell ()
+#import "CKYSBusinessCollegeTitleMoreButtonView.h"
+
+@interface CKYSBusinessCollegeExcellentCourseCell ()
 
 <UICollectionViewDelegate,
 UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout>
+UICollectionViewDelegateFlowLayout,
+CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *businessCollegeFreshListItemView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
-@property (nonatomic, weak) id<CKYSBusinessCollegeFreshListCellDelegate> delegate;
+@property (nonatomic, weak) id<CKYSBusinessCollegeExcellentCourseCellDelegate> delegate;
+
+@property (nonatomic, strong) CKYSBusinessCollegeTitleMoreButtonView *titleMoreButtonView;
 
 @end
 
-@implementation CKYSBusinessCollegeFreshListCell
+@implementation CKYSBusinessCollegeExcellentCourseCell
 
-- (void)setDelegate:(id<CKYSBusinessCollegeFreshListCellDelegate>)dalegate {
+- (void)setDelegate:(id<CKYSBusinessCollegeExcellentCourseCellDelegate>)dalegate {
     _delegate = dalegate;
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
-    static NSString *ID = @"CKYSBusinessCollegeFreshListCellID";
-    CKYSBusinessCollegeFreshListCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    static NSString *ID = @"CKYSBusinessCollegeExcellentCourseCellID";
+    CKYSBusinessCollegeExcellentCourseCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
-        cell = [[CKYSBusinessCollegeFreshListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[CKYSBusinessCollegeExcellentCourseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
     return cell;
 }
@@ -50,35 +56,20 @@ UICollectionViewDelegateFlowLayout>
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.contentView.backgroundColor = [UIColor whiteColor];
+        [self initTitleAndMore];
         [self initItemView];
     }
     return self;
 }
 
 - (void)initTitleAndMore {//height 47
-    UILabel *labelTitle = [[UILabel alloc] init];
-    labelTitle.textColor = [UIColor blackColor];
-    labelTitle.textAlignment = NSTextAlignmentCenter;
-    labelTitle.font = [UIFont systemFontOfSize:15];
-    
-    [self.contentView addSubview:labelTitle];
-    [labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).with.offset(15);
-        make.centerX.equalTo(self.contentView);
+    _titleMoreButtonView = [[CKYSBusinessCollegeTitleMoreButtonView alloc] initWithDelegate:self];
+    [self.contentView addSubview:_titleMoreButtonView];
+    [_titleMoreButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.centerX.equalTo(self.contentView);
+        make.height.equalTo(@47);
     }];
-    
-    UIButton *buttonMore = [[UIButton alloc] init];
-    buttonMore.titleLabel.text = @"更多>";
-    buttonMore.titleLabel.textColor = [UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1];
-    buttonMore.titleLabel.font = [UIFont systemFontOfSize:13];
-    
-    [self.contentView addSubview:buttonMore];
-    [buttonMore mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(labelTitle);
-        make.right.equalTo(self.contentView.mas_right).with.offset(-11);
-        make.width.equalTo(@33);
-    }];
-    [buttonMore addTarget:self action:@selector(buttonMoreAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_titleMoreButtonView setTitle:@"新鲜出炉"];
 }
 
 - (void)buttonMoreAction:(UIButton *)sender {
@@ -120,7 +111,7 @@ UICollectionViewDelegateFlowLayout>
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CKYSBusinessCollegeFreshListItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CKYSBusinessCollegeFreshListItemCell" forIndexPath:indexPath];
-//    [cell setItem:self.dataArray[indexPath.row]];
+
     return cell;
 }
 
@@ -152,9 +143,14 @@ UICollectionViewDelegateFlowLayout>
 }
 
 - (void)responseDelegateWithAtIndexPath:(NSIndexPath *)indexPath {
-    if (_delegate && [_delegate respondsToSelector:@selector(businessCollegeFreshListCellDelegateCell:indexpath:)]) {
-            [_delegate businessCollegeFreshListCellDelegateCell:self indexpath:indexPath];
+    if (_delegate && [_delegate respondsToSelector:@selector(businessCollegeExcellentCourseCellDelegateCell:indexpath:)]) {
+        [_delegate businessCollegeExcellentCourseCellDelegateCell:self indexpath:indexPath];
     }
+}
+
+#pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
+- (void)CKYSBusinessCollegeTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTitleMoreButtonView *)view moreAction:(UIButton *)sender {
+    
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class CKYSBusinessCollegeFreshListCell;
+
 @protocol CKYSBusinessCollegeFreshListCellDelegate <NSObject>
 
 - (void)businessCollegeFreshListCellDelegateCell:(CKYSBusinessCollegeFreshListCell *)cell indexpath:(NSIndexPath *)indexpath;
