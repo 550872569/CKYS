@@ -7,4 +7,6 @@ pod 'Masonry', '~> 0.6.4'
 
 pod 'UIButtonUnit'
 
+pod 'SDCycleScrollView','~> 1.75'
+
 end
