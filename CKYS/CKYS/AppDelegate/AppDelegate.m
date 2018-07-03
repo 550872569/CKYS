@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "CKYSBusinessCollegeViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [ViewController new];
+    self.window.rootViewController = [[CKYSBusinessCollegeViewController alloc] init];
     [self.window makeKeyAndVisible];
     return YES;
 }

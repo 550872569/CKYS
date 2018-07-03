@@ -9,6 +9,7 @@
 #import "CKYSBusinessCollegeWorkplaceItemCell.h"
 #import "Common.h"
 #import "CKYSBusinessCollegeWorkplaceItem.h"
+#import "Masonry.h"
 
 @interface CKYSBusinessCollegeWorkplaceItemCell ()
 
