@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT;
+
 @class CKYSBusinessCollegeTitleMoreButtonView;
 
 @protocol CKYSBusinessCollegeTitleMoreButtonViewDelegate <NSObject>
@@ -16,6 +18,7 @@
 
 @end
 
+/** 商学院 cell 标题+更多 视图 */
 @interface CKYSBusinessCollegeTitleMoreButtonView : UIView
 
 - (instancetype)initWithDelegate:(id<CKYSBusinessCollegeTitleMoreButtonViewDelegate>)delegate;

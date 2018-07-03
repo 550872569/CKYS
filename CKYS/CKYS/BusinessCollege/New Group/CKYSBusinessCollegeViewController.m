@@ -24,8 +24,8 @@
 }
 
 - (void)configTableView {
-    self.view.backgroundColor =[UIColor whiteColor];
-    CKYSBusinessCollegeTableView *tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, 100, VGScreenW, VGScreenH) style:UITableViewStylePlain];
+    self.view.backgroundColor =  [UIColor whiteColor];
+    CKYSBusinessCollegeTableView *tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, 100, VGScreenW, VGScreenH-100) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:tableView];
 }

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+/** 新鲜出炉 cell item cell 数据item 1.image_url 2.title 3.index */
+
 @interface CKYSBusinessCollegeFreshListItem : NSObject
 
 @property(nonatomic, strong, readonly) NSString *image;

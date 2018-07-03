@@ -17,17 +17,22 @@
 #import "UIButton+Title_Image.h"
 #import "UIButton+ImageTitleSpacing.h"
 
+#import "CKYSBusinessCollegeTitleMoreButtonView.h"
+
 @interface CKYSBusinessCollegeFreshListCell ()
 
 <UICollectionViewDelegate,
 UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout>
+UICollectionViewDelegateFlowLayout,
+CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *businessCollegeFreshListItemView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeFreshListCellDelegate> delegate;
+
+@property (nonatomic, strong) CKYSBusinessCollegeTitleMoreButtonView *titleMoreButtonView;
 
 @end
 
@@ -50,41 +55,24 @@ UICollectionViewDelegateFlowLayout>
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.contentView.backgroundColor = [UIColor whiteColor];
+        [self initTitleAndMore];
         [self initItemView];
     }
     return self;
 }
 
+//#define CKYS_BC_FC_ITEM_CELL_HEIGHT 274
+#define CKYS_BC_FC_ITEM_CELL_HEIGHT 100
+
 - (void)initTitleAndMore {//height 47
-    UILabel *labelTitle = [[UILabel alloc] init];
-    labelTitle.textColor = [UIColor blackColor];
-    labelTitle.textAlignment = NSTextAlignmentCenter;
-    labelTitle.font = [UIFont systemFontOfSize:15];
-    
-    [self.contentView addSubview:labelTitle];
-    [labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).with.offset(15);
-        make.centerX.equalTo(self.contentView);
+    _titleMoreButtonView = [[CKYSBusinessCollegeTitleMoreButtonView alloc] initWithDelegate:self];
+    [self.contentView addSubview:_titleMoreButtonView];
+    [_titleMoreButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.centerX.equalTo(self.contentView);
+        make.height.equalTo(@47);
     }];
-    
-    UIButton *buttonMore = [[UIButton alloc] init];
-    buttonMore.titleLabel.text = @"更多>";
-    buttonMore.titleLabel.textColor = [UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1];
-    buttonMore.titleLabel.font = [UIFont systemFontOfSize:13];
-    
-    [self.contentView addSubview:buttonMore];
-    [buttonMore mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(labelTitle);
-        make.right.equalTo(self.contentView.mas_right).with.offset(-11);
-        make.width.equalTo(@33);
-    }];
-    [buttonMore addTarget:self action:@selector(buttonMoreAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_titleMoreButtonView setTitle:@"新鲜出炉"];
 }
-
-- (void)buttonMoreAction:(UIButton *)sender {
-    
-}
-
 - (void)initItemView {
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
@@ -102,7 +90,7 @@ UICollectionViewDelegateFlowLayout>
         make.top.equalTo(self.contentView.mas_top).with.offset(47);
         make.left.right.bottom.mas_equalTo(self.contentView);
         make.right.mas_equalTo(self.contentView);
-        make.height.equalTo(@(AdaptedHeight(274)));
+        make.height.equalTo(@(AdaptedHeight(CKYS_BC_FC_ITEM_CELL_HEIGHT)));
         make.width.equalTo(@(SCREEN_WIDTH));
     }];
 }
@@ -157,4 +145,8 @@ UICollectionViewDelegateFlowLayout>
     }
 }
 
+#pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
+- (void)CKYSBusinessCollegeTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTitleMoreButtonView *)view moreAction:(UIButton *)sender {
+    
+}
 @end

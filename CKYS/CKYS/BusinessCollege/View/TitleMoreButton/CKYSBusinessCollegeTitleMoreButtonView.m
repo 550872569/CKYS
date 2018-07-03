@@ -15,6 +15,8 @@
 #import "UIButton+title.h"
 #import "UIButton+ClearColor.h"
 
+CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT = 47;
+
 @interface CKYSBusinessCollegeTitleMoreButtonView ()
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeTitleMoreButtonViewDelegate> delegate;
@@ -28,11 +30,11 @@
 }
 
 - (instancetype)initWithDelegate:(id<CKYSBusinessCollegeTitleMoreButtonViewDelegate>)delegate {
-    self = [super initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 47)];
+    self = [super initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT)];
     if (self) {
         _delegate = delegate;
     }
-    return [self initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 47)];
+    return [self initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT)];
 }
 
 - (void)setTitle:(NSString *)title {

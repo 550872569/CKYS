@@ -25,6 +25,7 @@
 		2CC1D75320EB16750088CFA4 /* CKYSBusinessCollegeExcellentCourseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D75220EB16750088CFA4 /* CKYSBusinessCollegeExcellentCourseCell.m */; };
 		2CC1D75720EB17830088CFA4 /* CKYSBusinessCollegeExcellentCourseItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D75620EB17830088CFA4 /* CKYSBusinessCollegeExcellentCourseItemCell.m */; };
 		2CC1D75B20EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D75A20EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.m */; };
+		2CC1D76320EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D76220EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.m */; };
 		C5B1230BEAAA55C57C40C784 /* libPods-CKYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD9513738C930D2354EC1CC /* libPods-CKYS.a */; };
 /* End PBXBuildFile section */
 
@@ -89,6 +90,8 @@
 		2CC1D75620EB17830088CFA4 /* CKYSBusinessCollegeExcellentCourseItemCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeExcellentCourseItemCell.m; sourceTree = "<group>"; };
 		2CC1D75920EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTitleMoreButtonView.h; sourceTree = "<group>"; };
 		2CC1D75A20EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeTitleMoreButtonView.m; sourceTree = "<group>"; };
+		2CC1D76120EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeExcellentCourseItem.h; sourceTree = "<group>"; };
+		2CC1D76220EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeExcellentCourseItem.m; sourceTree = "<group>"; };
 		575EC7C9280CF5C7FCA1F68A /* Pods-CKYS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.release.xcconfig"; sourceTree = "<group>"; };
 		6C1B781BDA07FBA5822D3D3E /* Pods-CKYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +200,7 @@
 		2CC1D6DE20EB09780088CFA4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2CC1D75820EB1B950088CFA4 /* TitleMoreButton */,
 				2CC1D74920EB0DC80088CFA4 /* TableView */,
 				2CC1D74A20EB0DD50088CFA4 /* Cell */,
 			);
@@ -209,8 +213,6 @@
 				2CC1D73820EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.h */,
 				2CC1D73520EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m */,
 				2CC1D73320EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCellDelegate.h */,
-				2CC1D73620EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.h */,
-				2CC1D73920EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m */,
 				2CC1D73420EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.h */,
 				2CC1D73720EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m */,
 			);
@@ -225,8 +227,6 @@
 				2CC1D73E20EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCellDelegate.h */,
 				2CC1D74320EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.h */,
 				2CC1D74220EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m */,
-				2CC1D73F20EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.h */,
-				2CC1D74020EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m */,
 			);
 			path = Workplace;
 			sourceTree = "<group>";
@@ -234,6 +234,7 @@
 		2CC1D74820EB0DA70088CFA4 /* BusinessCollege */ = {
 			isa = PBXGroup;
 			children = (
+				2CC1D75C20EB28FE0088CFA4 /* Item */,
 				2CC1D6DD20EB090E0088CFA4 /* ViewController */,
 				2CC1D6DE20EB09780088CFA4 /* View */,
 			);
@@ -252,7 +253,6 @@
 		2CC1D74A20EB0DD50088CFA4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				2CC1D75820EB1B950088CFA4 /* TitleMoreButton */,
 				2CC1D75020EB14470088CFA4 /* ExcellentCourse */,
 				2CC1D73D20EB0A0F0088CFA4 /* Workplace */,
 				2CC1D73220EB09F60088CFA4 /* FreshList */,
@@ -296,6 +296,43 @@
 				2CC1D75A20EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.m */,
 			);
 			path = TitleMoreButton;
+			sourceTree = "<group>";
+		};
+		2CC1D75C20EB28FE0088CFA4 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D76020EB29850088CFA4 /* ExcellentCourse */,
+				2CC1D75F20EB29660088CFA4 /* FreshList */,
+				2CC1D75D20EB293B0088CFA4 /* Workplace */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		2CC1D75D20EB293B0088CFA4 /* Workplace */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D73F20EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.h */,
+				2CC1D74020EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m */,
+			);
+			path = Workplace;
+			sourceTree = "<group>";
+		};
+		2CC1D75F20EB29660088CFA4 /* FreshList */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D73620EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.h */,
+				2CC1D73920EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m */,
+			);
+			path = FreshList;
+			sourceTree = "<group>";
+		};
+		2CC1D76020EB29850088CFA4 /* ExcellentCourse */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D76120EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.h */,
+				2CC1D76220EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.m */,
+			);
+			path = ExcellentCourse;
 			sourceTree = "<group>";
 		};
 		4865B4A625A48E3E75AB479E /* Frameworks */ = {
@@ -476,6 +513,7 @@
 				2CC1D73A20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m in Sources */,
 				2CC1D75720EB17830088CFA4 /* CKYSBusinessCollegeExcellentCourseItemCell.m in Sources */,
 				2CC1D74620EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m in Sources */,
+				2CC1D76320EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.m in Sources */,
 				2CC1D74520EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m in Sources */,
 				2CC1D74720EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m in Sources */,
 				2CC1D73C20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m in Sources */,

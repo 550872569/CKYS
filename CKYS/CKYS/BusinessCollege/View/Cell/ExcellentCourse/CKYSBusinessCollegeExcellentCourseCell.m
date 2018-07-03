@@ -12,13 +12,14 @@
 #import "Common.h"
 
 #import "CKYSBusinessCollegeExcellentCourseCellDelegate.h"
-#import "CKYSBusinessCollegeFreshListItemCell.h"
+#import "CKYSBusinessCollegeExcellentCourseItemCell.h"
 
 #import "UILabel+Category.h"
 #import "UIButton+Title_Image.h"
 #import "UIButton+ImageTitleSpacing.h"
 
 #import "CKYSBusinessCollegeTitleMoreButtonView.h"
+#import "CKYSBusinessCollegeExcellentCourseItem.h"
 
 @interface CKYSBusinessCollegeExcellentCourseCell ()
 
@@ -27,7 +28,7 @@ UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout,
 CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
-@property (nonatomic, strong) UICollectionView *businessCollegeFreshListItemView;
+@property (nonatomic, strong) UICollectionView *businessCollegeExcellentCourseItemView;
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
@@ -55,6 +56,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        [self loadData];
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self initTitleAndMore];
         [self initItemView];
@@ -62,18 +64,20 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     return self;
 }
 
+- (void)loadData {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray arrayWithCapacity:8];
+        [_dataArray addObjectsFromArray:[CKYSBusinessCollegeExcellentCourseModel businessCollegeExcellentCourseItemList]];
+    }
+}
 - (void)initTitleAndMore {//height 47
     _titleMoreButtonView = [[CKYSBusinessCollegeTitleMoreButtonView alloc] initWithDelegate:self];
     [self.contentView addSubview:_titleMoreButtonView];
     [_titleMoreButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.centerX.equalTo(self.contentView);
-        make.height.equalTo(@47);
+        make.height.equalTo(@(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT));
     }];
-    [_titleMoreButtonView setTitle:@"新鲜出炉"];
-}
-
-- (void)buttonMoreAction:(UIButton *)sender {
-    
+    [_titleMoreButtonView setTitle:@"精品课程"];
 }
 
 - (void)initItemView {
@@ -82,19 +86,23 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.minimumLineSpacing = 0;
-    _businessCollegeFreshListItemView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-    _businessCollegeFreshListItemView.backgroundColor = [UIColor whiteColor];
-    [_businessCollegeFreshListItemView registerClass:[CKYSBusinessCollegeFreshListItemCell class] forCellWithReuseIdentifier:@"CKYSBusinessCollegeFreshListItemCell"];
-    _businessCollegeFreshListItemView.delegate = self;
-    _businessCollegeFreshListItemView.dataSource = self;
-    _businessCollegeFreshListItemView.showsHorizontalScrollIndicator = NO;
-    [self.contentView addSubview:_businessCollegeFreshListItemView];
-    [_businessCollegeFreshListItemView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).with.offset(47);
-        make.left.right.bottom.mas_equalTo(self.contentView);
-        make.right.mas_equalTo(self.contentView);
-        make.height.equalTo(@(AdaptedHeight(274)));
+    _businessCollegeExcellentCourseItemView.showsHorizontalScrollIndicator = NO;
+    _businessCollegeExcellentCourseItemView.showsVerticalScrollIndicator = NO;
+    _businessCollegeExcellentCourseItemView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+    _businessCollegeExcellentCourseItemView.backgroundColor = [UIColor whiteColor];
+    [_businessCollegeExcellentCourseItemView registerClass:[CKYSBusinessCollegeExcellentCourseItemCell class] forCellWithReuseIdentifier:@"CKYSBusinessCollegeExcellentCourseItemCell"];
+    _businessCollegeExcellentCourseItemView.delegate = self;
+    _businessCollegeExcellentCourseItemView.dataSource = self;
+    _businessCollegeExcellentCourseItemView.showsHorizontalScrollIndicator = NO;
+    [self.contentView addSubview:_businessCollegeExcellentCourseItemView];
+    
+    [_businessCollegeExcellentCourseItemView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.top.equalTo(_titleMoreButtonView.mas_bottom);
+        make.left.right.mas_equalTo(self.contentView);
+        make.height.equalTo(@(CKYS_BCEC_ITEM_CELL_HEIGHT*4+CKYS_BCEC_ITEM_CELL_MARGIN*3));
         make.width.equalTo(@(SCREEN_WIDTH));
+        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-CKYS_BCEC_ITEM_CELL_BOTTOM_OFFSET);
     }];
 }
 
@@ -104,14 +112,14 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     if (self.dataArray.count == 0) {
         return 1;
     } else {
-        return self.dataArray.count;
+        return 8;
     }
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    CKYSBusinessCollegeFreshListItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CKYSBusinessCollegeFreshListItemCell" forIndexPath:indexPath];
-
+    CKYSBusinessCollegeExcellentCourseItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CKYSBusinessCollegeExcellentCourseItemCell" forIndexPath:indexPath];
+    [cell setItem:_dataArray[indexPath.row]];
     return cell;
 }
 
@@ -123,16 +131,20 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 /**设置每个item的尺寸*/
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(SCREEN_WIDTH/3,AdaptedHeight(105));
+    return CGSizeMake(CKYS_BCEC_ITEM_CELL_WIDTH,CKYS_BCEC_ITEM_CELL_HEIGHT);
 }
 
-/**设置每个item的UIEdgeInsets*/
+/* 设置每个item的UIEdgeInsets */
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 0, 0);
+    return UIEdgeInsetsMake(0, 2, 0, 0);
 }
-/**设置每个item水平间距*/
+/* SpacingForSection */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
+    return 2;
+}
+/* LineSpacing */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 2;
 }
 
 #pragma mark- UICollectionViewDelegate 点击跳转到对应页面

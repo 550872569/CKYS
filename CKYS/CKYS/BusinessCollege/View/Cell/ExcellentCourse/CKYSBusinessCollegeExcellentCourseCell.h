@@ -10,6 +10,7 @@
 
 @protocol CKYSBusinessCollegeExcellentCourseCellDelegate;
 
+/** 精品课程 */
 @interface CKYSBusinessCollegeExcellentCourseCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;

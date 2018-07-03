@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "CKYSBusinessCollegeWorkplaceCellDelegate.h"
 
+/** 职场 cell item cell 数据item 1.image_url 2.title 3.type */
+
 @interface CKYSBusinessCollegeWorkplaceItem : NSObject
 
 @property(nonatomic, strong, readonly) NSString *itemImage;
