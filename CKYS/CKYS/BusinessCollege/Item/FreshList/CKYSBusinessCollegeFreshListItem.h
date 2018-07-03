@@ -18,4 +18,12 @@
 
 @property(nonatomic, assign, readonly) int index;
 
+- (instancetype)initWithImageName:(NSString *)imageName title:(NSString *)title index:(int)index;
+
+@end
+
+@interface CKYSBusinessCollegeFreshListModel : NSObject
+
++ (NSArray <CKYSBusinessCollegeFreshListItem *>*)businessCollegeFreshListItemList;
+
 @end

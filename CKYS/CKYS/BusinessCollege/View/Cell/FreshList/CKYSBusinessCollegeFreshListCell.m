@@ -12,6 +12,7 @@
 
 #import "CKYSBusinessCollegeFreshListCellDelegate.h"
 #import "CKYSBusinessCollegeFreshListItemCell.h"
+#import "CKYSBusinessCollegeFreshListItem.h"
 
 #import "UILabel+Category.h"
 #import "UIButton+Title_Image.h"
@@ -54,6 +55,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        [self initData];
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self initTitleAndMore];
         [self initItemView];
@@ -61,15 +63,18 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     return self;
 }
 
-//#define CKYS_BC_FC_ITEM_CELL_HEIGHT 274
-#define CKYS_BC_FC_ITEM_CELL_HEIGHT 100
+- (void)initData {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray arrayWithArray:[CKYSBusinessCollegeFreshListModel businessCollegeFreshListItemList]];
+    }
+}
 
 - (void)initTitleAndMore {//height 47
     _titleMoreButtonView = [[CKYSBusinessCollegeTitleMoreButtonView alloc] initWithDelegate:self];
     [self.contentView addSubview:_titleMoreButtonView];
     [_titleMoreButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.centerX.equalTo(self.contentView);
-        make.height.equalTo(@47);
+        make.height.equalTo(@(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT));
     }];
     [_titleMoreButtonView setTitle:@"新鲜出炉"];
 }
@@ -87,10 +92,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     _businessCollegeFreshListItemView.showsHorizontalScrollIndicator = NO;
     [self.contentView addSubview:_businessCollegeFreshListItemView];
     [_businessCollegeFreshListItemView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).with.offset(47);
+        make.top.equalTo(self.contentView.mas_top).with.offset(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT);
         make.left.right.bottom.mas_equalTo(self.contentView);
-        make.right.mas_equalTo(self.contentView);
-        make.height.equalTo(@(AdaptedHeight(CKYS_BC_FC_ITEM_CELL_HEIGHT)));
+        make.height.equalTo(@(CKYS_BCFL_ITEM_CELL_HEIGHT+CKYS_BCFL_ITEM_CELL_MARGIN_BOTTOM));
         make.width.equalTo(@(SCREEN_WIDTH));
     }];
 }
@@ -108,7 +112,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CKYSBusinessCollegeFreshListItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CKYSBusinessCollegeFreshListItemCell" forIndexPath:indexPath];
-//    [cell setItem:self.dataArray[indexPath.row]];
+    [cell setItem:self.dataArray[indexPath.row]];
     return cell;
 }
 
@@ -120,18 +124,22 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 /**设置每个item的尺寸*/
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(SCREEN_WIDTH/3,AdaptedHeight(105));
+    return CGSizeMake(CKYS_BCFL_ITEM_CELL_WIDTH,CKYS_BCFL_ITEM_CELL_HEIGHT);
 }
 
 /**设置每个item的UIEdgeInsets*/
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, 0, 0, 0);
-}
-/**设置每个item水平间距*/
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 0;
+    return UIEdgeInsetsMake(0, CKYS_BCFL_ITEM_CELL_MARGIN_LEFT, CKYS_BCFL_ITEM_CELL_MARGIN_BOTTOM, 0);
 }
 
+/* SpacingForSection */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return CKYS_BCFL_ITEM_CELL_MARGIN_CLUME;
+}
+/* LineSpacing */
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return CKYS_BCFL_ITEM_CELL_MARGIN_ROW;
+}
 #pragma mark- UICollectionViewDelegate 点击跳转到对应页面
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
