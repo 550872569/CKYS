@@ -102,6 +102,7 @@
 		2CC1D76B20EB47C10088CFA4 /* CKYSBusinessCollegeFamousTeacherCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeFamousTeacherCellDelegate.h; sourceTree = "<group>"; };
 		2CC1D76D20EB4B090088CFA4 /* CKYSBusinessCollegeFamousTeacherItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeFamousTeacherItem.h; sourceTree = "<group>"; };
 		2CC1D76E20EB4B090088CFA4 /* CKYSBusinessCollegeFamousTeacherItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeFamousTeacherItem.m; sourceTree = "<group>"; };
+		2CC1D77020EB59AD0088CFA4 /* CKYSBusinessCollegeTitleMoreButtonViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTitleMoreButtonViewDelegate.h; sourceTree = "<group>"; };
 		575EC7C9280CF5C7FCA1F68A /* Pods-CKYS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.release.xcconfig"; sourceTree = "<group>"; };
 		6C1B781BDA07FBA5822D3D3E /* Pods-CKYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,10 +264,10 @@
 		2CC1D74A20EB0DD50088CFA4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				2CC1D76420EB471D0088CFA4 /* FamousTeacher */,
-				2CC1D75020EB14470088CFA4 /* ExcellentCourse */,
 				2CC1D73D20EB0A0F0088CFA4 /* Workplace */,
 				2CC1D73220EB09F60088CFA4 /* FreshList */,
+				2CC1D75020EB14470088CFA4 /* ExcellentCourse */,
+				2CC1D76420EB471D0088CFA4 /* FamousTeacher */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -305,6 +306,7 @@
 			children = (
 				2CC1D75920EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.h */,
 				2CC1D75A20EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.m */,
+				2CC1D77020EB59AD0088CFA4 /* CKYSBusinessCollegeTitleMoreButtonViewDelegate.h */,
 			);
 			path = TitleMoreButton;
 			sourceTree = "<group>";
@@ -312,10 +314,10 @@
 		2CC1D75C20EB28FE0088CFA4 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				2CC1D76C20EB4ADD0088CFA4 /* FamousTeacher */,
-				2CC1D76020EB29850088CFA4 /* ExcellentCourse */,
-				2CC1D75F20EB29660088CFA4 /* FreshList */,
 				2CC1D75D20EB293B0088CFA4 /* Workplace */,
+				2CC1D75F20EB29660088CFA4 /* FreshList */,
+				2CC1D76020EB29850088CFA4 /* ExcellentCourse */,
+				2CC1D76C20EB4ADD0088CFA4 /* FamousTeacher */,
 			);
 			path = Item;
 			sourceTree = "<group>";

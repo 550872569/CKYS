@@ -27,8 +27,8 @@
 
 @implementation CKYSBusinessCollegeWorkplaceCell
 
-- (void)setDelegate:(id<CKYSBusinessCollegeWorkplaceCellDelegate>)dalegate {
-    _delegate = dalegate;
+- (void)setDelegate:(id<CKYSBusinessCollegeWorkplaceCellDelegate>)delegate {
+    _delegate = delegate;
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
@@ -127,13 +127,13 @@
         CKYSBusinessCollegeWorkplaceItemCellType type = CKYSBusinessCollegeWorkplaceItemCellTypeXBRM;
         switch (indexPath.row) {
                 case CKYSBusinessCollegeWorkplaceItemCellTypeXBRM:
-                
+                type = CKYSBusinessCollegeWorkplaceItemCellTypeXBRM;
                 break;
                 case CKYSBusinessCollegeWorkplaceItemCellTypeJYTS:
-                
+                type = CKYSBusinessCollegeWorkplaceItemCellTypeJYTS;
                 break;
                 case CKYSBusinessCollegeWorkplaceItemCellTypeSQGL:
-                
+                type = CKYSBusinessCollegeWorkplaceItemCellTypeSQGL;
                 break;
         }
         if (_delegate && [_delegate respondsToSelector:@selector(businessCollegeWorkplaceCell:actionType:)]) {

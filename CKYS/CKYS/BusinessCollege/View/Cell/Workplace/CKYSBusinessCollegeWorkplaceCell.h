@@ -15,6 +15,6 @@
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
-- (void)setDelegate:(id<CKYSBusinessCollegeWorkplaceCellDelegate>)dalegate;
+- (void)setDelegate:(id<CKYSBusinessCollegeWorkplaceCellDelegate>)delegate;
 
 @end

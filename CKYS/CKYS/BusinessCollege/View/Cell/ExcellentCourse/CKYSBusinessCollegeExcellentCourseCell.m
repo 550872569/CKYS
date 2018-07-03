@@ -40,8 +40,8 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @implementation CKYSBusinessCollegeExcellentCourseCell
 
-- (void)setDelegate:(id<CKYSBusinessCollegeExcellentCourseCellDelegate>)dalegate {
-    _delegate = dalegate;
+- (void)setDelegate:(id<CKYSBusinessCollegeExcellentCourseCellDelegate>)delegate {
+    _delegate = delegate;
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
@@ -162,7 +162,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 #pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
 - (void)CKYSBusinessCollegeTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTitleMoreButtonView *)view moreAction:(UIButton *)sender {
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
+        [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:self moreAction:sender];
+    }
 }
 
 @end

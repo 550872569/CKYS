@@ -10,6 +10,7 @@
 #import "Common.h"
 #import "CKYSBusinessCollegeWorkplaceItem.h"
 #import "Masonry.h"
+#import "UILabel+Category.h"
 
 @interface CKYSBusinessCollegeWorkplaceItemCell ()
 
@@ -39,13 +40,9 @@
         make.height.mas_offset((53));
         make.centerX.equalTo(self.contentView);
     }];
-    _itemLabel = [[UILabel alloc] init];
-    _itemLabel.textColor = [UIColor blackColor];
-    _itemLabel.textAlignment = NSTextAlignmentCenter;
-    _itemLabel.font = [UIFont systemFontOfSize:15];
+    _itemLabel = [UILabel labelWithTitle:@"" titleFont:15 backgroundColor:[UIColor clearColor] textAlignment:NSTextAlignmentCenter ract:CGRectMake(0, 0, 15*4+5, 15) numberOfLines:1 textColor:[UIColor colorWithRed:51.0026/255.0 green:51.0026/255.0 blue:51.0026/255.0 alpha:1]];
     [self.contentView addSubview:_itemLabel];
     [_itemLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_offset(AdaptedWidth(59));
         make.centerX.mas_equalTo(_itemImageView);
         make.top.equalTo(_itemImageView.mas_bottom).with.offset(9);
         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-15);

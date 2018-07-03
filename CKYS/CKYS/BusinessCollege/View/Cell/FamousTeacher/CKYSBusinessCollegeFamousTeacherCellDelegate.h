@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CKYSBusinessCollegeTitleMoreButtonViewDelegate.h"
 
 @class CKYSBusinessCollegeFamousTeacherCell;
-@protocol CKYSBusinessCollegeFamousTeacherCellDelegate <NSObject>
+
+@protocol CKYSBusinessCollegeFamousTeacherCellDelegate <CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 - (void)businessCollegeFamousTeacherCellDelegateCell:(CKYSBusinessCollegeFamousTeacherCell *)cell indexpath:(NSIndexPath *)indexpath;
 

@@ -38,8 +38,8 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @implementation CKYSBusinessCollegeFreshListCell
 
-- (void)setDelegate:(id<CKYSBusinessCollegeFreshListCellDelegate>)dalegate {
-    _delegate = dalegate;
+- (void)setDelegate:(id<CKYSBusinessCollegeFreshListCellDelegate>)delegate {
+    _delegate = delegate;
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
@@ -147,6 +147,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 #pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
 - (void)CKYSBusinessCollegeTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTitleMoreButtonView *)view moreAction:(UIButton *)sender {
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
+        [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:self moreAction:sender];
+    }
 }
+
 @end

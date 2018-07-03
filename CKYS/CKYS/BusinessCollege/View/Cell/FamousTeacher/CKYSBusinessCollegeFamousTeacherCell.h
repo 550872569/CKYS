@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CKYSBusinessCollegeTitleMoreButtonViewDelegate.h"
+
 @protocol CKYSBusinessCollegeFamousTeacherCellDelegate;
 
 /** 名师推荐cell */
-@interface CKYSBusinessCollegeFamousTeacherCell : UITableViewCell
+@interface CKYSBusinessCollegeFamousTeacherCell : UITableViewCell <CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
-- (void)setDelegate:(id<CKYSBusinessCollegeFamousTeacherCellDelegate>)dalegate;
+- (void)setDelegate:(id<CKYSBusinessCollegeFamousTeacherCellDelegate>)delegate;
 
 @end

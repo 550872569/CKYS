@@ -18,6 +18,6 @@
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
-- (void)setDelegate:(id<CKYSBusinessCollegeFreshListCellDelegate>)dalegate;
+- (void)setDelegate:(id<CKYSBusinessCollegeFreshListCellDelegate>)delegate;
 
 @end

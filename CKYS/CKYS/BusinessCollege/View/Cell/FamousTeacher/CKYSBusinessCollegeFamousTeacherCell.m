@@ -42,8 +42,8 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 #define CKYS_BCFT_CELL_HRIGHT 211
 
-- (void)setDelegate:(id<CKYSBusinessCollegeFamousTeacherCellDelegate>)dalegate {
-    _delegate = dalegate;
+- (void)setDelegate:(id<CKYSBusinessCollegeFamousTeacherCellDelegate>)delegate {
+    _delegate = delegate;
 }
 
 + (instancetype)cellWithTableView:(UITableView *)tableView {
@@ -164,7 +164,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 #pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
 - (void)CKYSBusinessCollegeTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTitleMoreButtonView *)view moreAction:(UIButton *)sender {
-    
+    if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
+        [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:self moreAction:sender];
+    }
 }
 
 @end

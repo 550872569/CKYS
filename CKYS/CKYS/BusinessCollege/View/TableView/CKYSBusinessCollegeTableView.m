@@ -20,13 +20,17 @@
 #import "CKYSBusinessCollegeFamousTeacherCell.h"
 #import "CKYSBusinessCollegeFamousTeacherCellDelegate.h"
 
+#import "CKYSBusinessCollegeTitleMoreButtonViewDelegate.h"
+
 @interface CKYSBusinessCollegeTableView ()
 
 <UITableViewDataSource,
 UITableViewDelegate,
 CKYSBusinessCollegeWorkplaceCellDelegate,
 CKYSBusinessCollegeFreshListCellDelegate,
-CKYSBusinessCollegeExcellentCourseCellDelegate>
+CKYSBusinessCollegeExcellentCourseCellDelegate,
+CKYSBusinessCollegeFamousTeacherCellDelegate,
+CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @end
 
@@ -86,7 +90,9 @@ CKYSBusinessCollegeExcellentCourseCellDelegate>
     
 }
 
-#pragma mark - CKYSBusinessCollegeWorkplaceCellDelegate
+#pragma mark -  Cell Delegate
+
+#pragma mark CKYSBusinessCollegeWorkplaceCellDelegate
 - (void)businessCollegeWorkplaceCell:(CKYSBusinessCollegeWorkplaceCell *)cell actionType:(CKYSBusinessCollegeWorkplaceItemCellType)type {
     switch (type) {
             case CKYSBusinessCollegeWorkplaceItemCellTypeXBRM:
@@ -101,15 +107,30 @@ CKYSBusinessCollegeExcellentCourseCellDelegate>
     }
 }
 
-#pragma mark - CKYSBusinessCollegeFreshListCellDelegate
-
+#pragma mark CKYSBusinessCollegeFreshListCellDelegate
 - (void)businessCollegeFreshListCellDelegateCell:(CKYSBusinessCollegeFreshListCell *)cell indexpath:(NSIndexPath *)indexpath {
     
 }
 
-#pragma mark - CKYSBusinessCollegeExcellentCourseCellDelegate
+#pragma mark CKYSBusinessCollegeExcellentCourseCellDelegate
 - (void)businessCollegeExcellentCourseCellDelegateCell:(CKYSBusinessCollegeExcellentCourseCell *)cell indexpath:(NSIndexPath *)indexpath {
     
+}
+
+#pragma mark CKYSBusinessCollegeFamousTeacherCellDelegate
+- (void)businessCollegeFamousTeacherCellDelegateCell:(CKYSBusinessCollegeFamousTeacherCell *)cell indexpath:(NSIndexPath *)indexpath {
+    
+}
+
+#pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
+- (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(UITableViewCell *)cell moreAction:(UIButton *)sender {
+    if ([cell isKindOfClass:NSClassFromString(@"CKYSBusinessCollegeFamousTeacherCell")]) {
+        
+    } else if ([cell isKindOfClass:NSClassFromString(@"CKYSBusinessCollegeExcellentCourseCell")]) {
+        
+    } else if ([cell isKindOfClass:NSClassFromString(@"CKYSBusinessCollegeFreshListCell")]) {
+        
+    }
 }
 
 @end

@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CKYSBusinessCollegeTitleMoreButtonViewDelegate.h"
+
 @class CKYSBusinessCollegeFreshListCell;
 
-@protocol CKYSBusinessCollegeFreshListCellDelegate <NSObject>
+@protocol CKYSBusinessCollegeFreshListCellDelegate <CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 - (void)businessCollegeFreshListCellDelegateCell:(CKYSBusinessCollegeFreshListCell *)cell indexpath:(NSIndexPath *)indexpath;
 
