@@ -13,6 +13,14 @@
 		2CC1D6C020EB05E10088CFA4 /* CKYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6BF20EB05E10088CFA4 /* CKYSTests.m */; };
 		2CC1D6CB20EB05E10088CFA4 /* CKYSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6CA20EB05E10088CFA4 /* CKYSUITests.m */; };
 		2CC1D6D920EB06520088CFA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CC1D6D820EB06520088CFA4 /* Images.xcassets */; };
+		2CC1D6E120EB09940088CFA4 /* CKYSBusinessCollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6E020EB09940088CFA4 /* CKYSBusinessCollegeViewController.m */; };
+		2CC1D6E420EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6E220EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m */; };
+		2CC1D73A20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D73520EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m */; };
+		2CC1D73B20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D73720EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m */; };
+		2CC1D73C20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D73920EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m */; };
+		2CC1D74520EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D74020EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m */; };
+		2CC1D74620EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D74220EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m */; };
+		2CC1D74720EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D74420EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m */; };
 		C5B1230BEAAA55C57C40C784 /* libPods-CKYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD9513738C930D2354EC1CC /* libPods-CKYS.a */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +57,25 @@
 		2CC1D6CA20EB05E10088CFA4 /* CKYSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSUITests.m; sourceTree = "<group>"; };
 		2CC1D6CC20EB05E10088CFA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC1D6D820EB06520088CFA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2CC1D6DF20EB09940088CFA4 /* CKYSBusinessCollegeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeViewController.h; sourceTree = "<group>"; };
+		2CC1D6E020EB09940088CFA4 /* CKYSBusinessCollegeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeViewController.m; sourceTree = "<group>"; };
+		2CC1D6E220EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeTableView.m; sourceTree = "<group>"; };
+		2CC1D6E320EB099C0088CFA4 /* CKYSBusinessCollegeTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableView.h; sourceTree = "<group>"; };
+		2CC1D73120EB09C50088CFA4 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		2CC1D73320EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeFreshListCellDelegate.h; sourceTree = "<group>"; };
+		2CC1D73420EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeFreshListItemCell.h; sourceTree = "<group>"; };
+		2CC1D73520EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeFreshListCell.m; sourceTree = "<group>"; };
+		2CC1D73620EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeFreshListItem.h; sourceTree = "<group>"; };
+		2CC1D73720EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeFreshListItemCell.m; sourceTree = "<group>"; };
+		2CC1D73820EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeFreshListCell.h; sourceTree = "<group>"; };
+		2CC1D73920EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeFreshListItem.m; sourceTree = "<group>"; };
+		2CC1D73E20EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeWorkplaceCellDelegate.h; sourceTree = "<group>"; };
+		2CC1D73F20EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeWorkplaceItem.h; sourceTree = "<group>"; };
+		2CC1D74020EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeWorkplaceItem.m; sourceTree = "<group>"; };
+		2CC1D74120EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeWorkplaceCell.h; sourceTree = "<group>"; };
+		2CC1D74220EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeWorkplaceItemCell.m; sourceTree = "<group>"; };
+		2CC1D74320EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeWorkplaceItemCell.h; sourceTree = "<group>"; };
+		2CC1D74420EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeWorkplaceCell.m; sourceTree = "<group>"; };
 		575EC7C9280CF5C7FCA1F68A /* Pods-CKYS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.release.xcconfig"; sourceTree = "<group>"; };
 		6C1B781BDA07FBA5822D3D3E /* Pods-CKYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,10 +131,8 @@
 		2CC1D6A520EB05E10088CFA4 /* CKYS */ = {
 			isa = PBXGroup;
 			children = (
-				2CC1D6A620EB05E10088CFA4 /* AppDelegate.h */,
-				2CC1D6A720EB05E10088CFA4 /* AppDelegate.m */,
-				2CC1D6A920EB05E10088CFA4 /* ViewController.h */,
-				2CC1D6AA20EB05E10088CFA4 /* ViewController.m */,
+				2CC1D6DC20EB08FD0088CFA4 /* AppDelegate */,
+				2CC1D73120EB09C50088CFA4 /* Common.h */,
 				2CC1D6B420EB05E10088CFA4 /* Info.plist */,
 				2CC1D6B520EB05E10088CFA4 /* main.m */,
 				2CC1D6D820EB06520088CFA4 /* Images.xcassets */,
@@ -131,6 +156,92 @@
 				2CC1D6CC20EB05E10088CFA4 /* Info.plist */,
 			);
 			path = CKYSUITests;
+			sourceTree = "<group>";
+		};
+		2CC1D6DC20EB08FD0088CFA4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D6A620EB05E10088CFA4 /* AppDelegate.h */,
+				2CC1D6A720EB05E10088CFA4 /* AppDelegate.m */,
+				2CC1D74820EB0DA70088CFA4 /* BusinessCollege */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2CC1D6DD20EB090E0088CFA4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D6DF20EB09940088CFA4 /* CKYSBusinessCollegeViewController.h */,
+				2CC1D6E020EB09940088CFA4 /* CKYSBusinessCollegeViewController.m */,
+				2CC1D6A920EB05E10088CFA4 /* ViewController.h */,
+				2CC1D6AA20EB05E10088CFA4 /* ViewController.m */,
+			);
+			name = ViewController;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		2CC1D6DE20EB09780088CFA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D74920EB0DC80088CFA4 /* TableView */,
+				2CC1D74A20EB0DD50088CFA4 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2CC1D73220EB09F60088CFA4 /* FreshList */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D73820EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.h */,
+				2CC1D73520EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m */,
+				2CC1D73320EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCellDelegate.h */,
+				2CC1D73620EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.h */,
+				2CC1D73920EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m */,
+				2CC1D73420EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.h */,
+				2CC1D73720EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m */,
+			);
+			path = FreshList;
+			sourceTree = "<group>";
+		};
+		2CC1D73D20EB0A0F0088CFA4 /* Workplace */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D74120EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCell.h */,
+				2CC1D74420EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m */,
+				2CC1D73E20EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceCellDelegate.h */,
+				2CC1D74320EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.h */,
+				2CC1D74220EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m */,
+				2CC1D73F20EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.h */,
+				2CC1D74020EB0A200088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m */,
+			);
+			path = Workplace;
+			sourceTree = "<group>";
+		};
+		2CC1D74820EB0DA70088CFA4 /* BusinessCollege */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D6DD20EB090E0088CFA4 /* ViewController */,
+				2CC1D6DE20EB09780088CFA4 /* View */,
+			);
+			path = BusinessCollege;
+			sourceTree = "<group>";
+		};
+		2CC1D74920EB0DC80088CFA4 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D6E320EB099C0088CFA4 /* CKYSBusinessCollegeTableView.h */,
+				2CC1D6E220EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		2CC1D74A20EB0DD50088CFA4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2CC1D73D20EB0A0F0088CFA4 /* Workplace */,
+				2CC1D73220EB09F60088CFA4 /* FreshList */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		4865B4A625A48E3E75AB479E /* Frameworks */ = {
@@ -303,8 +414,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC1D6E420EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m in Sources */,
 				2CC1D6AB20EB05E10088CFA4 /* ViewController.m in Sources */,
 				2CC1D6B620EB05E10088CFA4 /* main.m in Sources */,
+				2CC1D6E120EB09940088CFA4 /* CKYSBusinessCollegeViewController.m in Sources */,
+				2CC1D73A20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m in Sources */,
+				2CC1D74620EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m in Sources */,
+				2CC1D74520EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m in Sources */,
+				2CC1D74720EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m in Sources */,
+				2CC1D73C20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m in Sources */,
+				2CC1D73B20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m in Sources */,
 				2CC1D6A820EB05E10088CFA4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
