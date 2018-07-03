@@ -17,6 +17,9 @@
 #import "CKYSBusinessCollegeExcellentCourseCell.h"
 #import "CKYSBusinessCollegeExcellentCourseCellDelegate.h"
 
+#import "CKYSBusinessCollegeFamousTeacherCell.h"
+#import "CKYSBusinessCollegeFamousTeacherCellDelegate.h"
+
 @interface CKYSBusinessCollegeTableView ()
 
 <UITableViewDataSource,
@@ -50,7 +53,7 @@ CKYSBusinessCollegeExcellentCourseCellDelegate>
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -59,22 +62,21 @@ CKYSBusinessCollegeExcellentCourseCellDelegate>
         CKYSBusinessCollegeWorkplaceCell *cell = [CKYSBusinessCollegeWorkplaceCell cellWithTableView:tableView];
         [cell setDelegate:(id)self];
         return cell;
-
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeFreshList) {
         
         CKYSBusinessCollegeFreshListCell *cell = [CKYSBusinessCollegeFreshListCell cellWithTableView:tableView];
         [cell setDelegate:(id)self];
         return cell;
-
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeExcellentCourse) {
         
         CKYSBusinessCollegeExcellentCourseCell *cell = [CKYSBusinessCollegeExcellentCourseCell cellWithTableView:tableView];
         [cell setDelegate:(id)self];
         return cell;
-
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypefFamousTeachers) {
-        return nil;
-
+        
+        CKYSBusinessCollegeFamousTeacherCell *cell = [CKYSBusinessCollegeFamousTeacherCell cellWithTableView:tableView];
+        [cell setDelegate:(id)self];
+        return cell;
     } else {
         return nil;
     }
