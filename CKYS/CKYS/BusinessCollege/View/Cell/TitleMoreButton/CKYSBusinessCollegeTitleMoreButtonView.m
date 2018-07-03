@@ -13,6 +13,7 @@
 
 #import "UILabel+Category.h"
 #import "UIButton+title.h"
+#import "UIButton+ClearColor.h"
 
 @interface CKYSBusinessCollegeTitleMoreButtonView ()
 
@@ -47,6 +48,7 @@
 }
 
 - (void)initUI {
+    self.backgroundColor = [UIColor yellowColor];
     _labelTitle = [UILabel labelWithTitle:@"" titleFont:16 backgroundColor:[UIColor clearColor] textAlignment:NSTextAlignmentCenter ract:CGRectZero numberOfLines:1 textColor:[UIColor colorWithRed:51.0026/255.0 green:51.0026/255.0 blue:51.0026/255.0 alpha:1]];
     [self addSubview:_labelTitle];
     [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,6 +62,16 @@
         make.right.equalTo(self.mas_right).with.offset(-11);
         make.width.equalTo(@40);
     }];
+    UIButton *buttonClearColor = [UIButton buttonWithTargrt:self action:@selector(buttonClearColorAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:buttonClearColor];
+    [buttonClearColor mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.bottom.equalTo(self);
+        make.right.equalTo(buttonMore.mas_left);
+    }];
+}
+
+- (void)buttonClearColorAction:(UIButton *)sender {
+    return;
 }
 
 - (void)buttonMoreAction:(UIButton *)sender {
