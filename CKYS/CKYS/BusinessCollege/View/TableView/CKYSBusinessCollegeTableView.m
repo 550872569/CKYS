@@ -21,11 +21,14 @@
 #import "CKYSBusinessCollegeFamousTeacherCellDelegate.h"
 
 #import "CKYSBusinessCollegeTitleMoreButtonViewDelegate.h"
+#import "CKYSBusinessCollegeBannerCell.h"
+#import "CKYSBusinessCollegeBannerCellDelegate.h"
 
 @interface CKYSBusinessCollegeTableView ()
 
 <UITableViewDataSource,
 UITableViewDelegate,
+CKYSBusinessCollegeBannerCellDelegate,
 CKYSBusinessCollegeWorkplaceCellDelegate,
 CKYSBusinessCollegeFreshListCellDelegate,
 CKYSBusinessCollegeExcellentCourseCellDelegate,
@@ -65,7 +68,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeBanner) {
-        CKYSBusinessCollegeWorkplaceCell *cell = [CKYSBusinessCollegeWorkplaceCell cellWithTableView:tableView];
+        CKYSBusinessCollegeBannerCell *cell = [CKYSBusinessCollegeBannerCell cellWithTableView:tableView];
         [cell setDelegate:(id)self];
         return cell;
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeWorkplace) {
@@ -98,6 +101,11 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 #pragma mark -  Cell Delegate
 
+#pragma mark CKYSBusinessCollegeBannerCellDelegate
+- (void)businessCollegeBannerCell:(CKYSBusinessCollegeBannerCell *)cell actionType:(CKYSBusinessCollegeBannerCellActionType)type {
+    
+}
+
 #pragma mark CKYSBusinessCollegeWorkplaceCellDelegate
 - (void)businessCollegeWorkplaceCell:(CKYSBusinessCollegeWorkplaceCell *)cell actionType:(CKYSBusinessCollegeWorkplaceItemCellType)type {
     switch (type) {
@@ -128,7 +136,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     
 }
 
-#pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
+#pragma mark CKYSBusinessCollegeTitleMoreButtonViewDelegate
 - (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTableViewCellType)cellType moreAction:(UIButton *)sender {
     if (cellType==CKYSBusinessCollegeTableViewCellTypeBanner) {
         
