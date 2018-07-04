@@ -1,22 +1,22 @@
 //
-//  CKYSBCCourseListViewController.m
+//  CKYSBCCourseDetailViewController.m
 //  CKYS
 //
 //  Created by Yan on 2018/7/4.
 //  Copyright © 2018年 YY. All rights reserved.
 //
 
-#import "CKYSBCCourseListViewController.h"
+#import "CKYSBCCourseDetailViewController.h"
 
-@interface CKYSBCCourseListViewController ()
+@interface CKYSBCCourseDetailViewController ()
 
 @end
 
-@implementation CKYSBCCourseListViewController
+@implementation CKYSBCCourseDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"课程列表";
+    self.title = @"课程详情";
     self.view.backgroundColor = [UIColor whiteColor];
 }
 

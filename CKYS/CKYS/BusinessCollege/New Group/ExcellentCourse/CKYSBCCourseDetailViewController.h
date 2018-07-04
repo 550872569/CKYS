@@ -1,5 +1,5 @@
 //
-//  CKYSBCCourseListViewController.h
+//  CKYSBCCourseDetailViewController.h
 //  CKYS
 //
 //  Created by Yan on 2018/7/4.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-/** 课程列表VC */
-@interface CKYSBCCourseListViewController : UIViewController
+@interface CKYSBCCourseDetailViewController : UIViewController
 
 @end
