@@ -56,7 +56,7 @@
 #pragma mark 轮播图
 - (void)businessCollegeTableViewBannerCellActionType:(CKYSBusinessCollegeTableViewCellType)type index:(CKYSBusinessCollegeBannerCellActionType)index {
     NSLog(@"type%ld index:%ld",type,index);
-    [self pushToObjViewController:[[CKYSBCHotCourseViewController alloc] init]];
+    [self pushToObjViewController:[[CKYSBCCourseDetailViewController alloc] init]];
 }
 
 #pragma mark 小白 精英 管理

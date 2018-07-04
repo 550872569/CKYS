@@ -9,4 +9,8 @@ pod 'UIButtonUnit'
 
 pod 'SDCycleScrollView','~> 1.75'
 
+pod 'AFNetworking', '~> 3.1.0'
+
+pod 'MJRefresh', '~> 3.1.15.3’
+
 end
