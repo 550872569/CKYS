@@ -43,7 +43,23 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
 
 - (void)initUI {
     
-    self.contentView.backgroundColor = [UIColor lightGrayColor];
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    
+    
+    UIView *viewBg = [[UIView alloc] init];
+    [self.contentView addSubview:viewBg];
+    viewBg.backgroundColor = [UIColor whiteColor];
+    viewBg.layer.shadowColor = [UIColor colorWithRed:127.5/255.0 green:127.5/255.0 blue:127.5/255.0 alpha:1].CGColor;
+    viewBg.layer.borderColor = viewBg.layer.shadowColor;
+    viewBg.layer.borderWidth = 0.000001;
+    viewBg.layer.cornerRadius = 2;
+    viewBg.layer.shadowOpacity = 1;
+    viewBg.layer.shadowRadius = 2;
+    viewBg.layer.shadowOffset = CGSizeZero;
+    
+    [viewBg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.bottom.equalTo(self.contentView);
+    }];
     
     _imageView = [[UIImageView alloc] init];
     [self.contentView addSubview:_imageView];
@@ -56,6 +72,7 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
         make.top.equalTo(self.contentView.mas_top).with.offset(AdaptedHeight(17));
         make.centerX.equalTo(self.contentView);
     }];
+    
     
     _labelTitle = [UILabel labelWithTitle:@"" titleFont:16 backgroundColor:[UIColor clearColor] textAlignment:NSTextAlignmentCenter ract:CGRectZero numberOfLines:1 textColor:[UIColor colorWithRed:51.0026/255.0 green:51.0026/255.0 blue:51.0026/255.0 alpha:1]];
     [self.contentView addSubview:_labelTitle];

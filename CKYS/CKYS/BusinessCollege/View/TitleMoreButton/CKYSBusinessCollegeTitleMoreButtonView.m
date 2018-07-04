@@ -52,7 +52,7 @@ CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT = 47;
 }
 
 - (void)initUI {
-    self.backgroundColor = [UIColor yellowColor];
+    self.backgroundColor = [UIColor whiteColor];
     _labelTitle = [UILabel labelWithTitle:@"" titleFont:16 backgroundColor:[UIColor clearColor] textAlignment:NSTextAlignmentCenter ract:CGRectZero numberOfLines:1 textColor:[UIColor colorWithRed:51.0026/255.0 green:51.0026/255.0 blue:51.0026/255.0 alpha:1]];
     [self addSubview:_labelTitle];
     [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
