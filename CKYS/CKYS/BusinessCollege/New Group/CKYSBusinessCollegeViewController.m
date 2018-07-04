@@ -11,6 +11,7 @@
 
 #define VGScreenW [UIScreen mainScreen].bounds.size.width
 #define VGScreenH [UIScreen mainScreen].bounds.size.height
+#define STATUS_AND_NAVIGATION_HEIGHT               ([UIScreen mainScreen].bounds.size.height>=812 ? 88 : 64)
 
 @interface CKYSBusinessCollegeViewController ()
 
@@ -25,7 +26,7 @@
 
 - (void)configTableView {
     self.view.backgroundColor =  [UIColor whiteColor];
-    CKYSBusinessCollegeTableView *tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, 100, VGScreenW, VGScreenH-100) style:UITableViewStylePlain];
+    CKYSBusinessCollegeTableView *tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, VGScreenW, VGScreenH-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor grayColor];
     [self.view addSubview:tableView];
 }
