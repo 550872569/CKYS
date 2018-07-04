@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 /** 点击轮播图 index */
-typedef NS_ENUM(NSUInteger, CKYSBusinessCollegeBannerCellActionType) {
+typedef NS_ENUM(NSInteger, CKYSBusinessCollegeBannerCellActionType) {
     CKYSBusinessCollegeBannerCellActionType_Index_0 = 0,
     CKYSBusinessCollegeBannerCellActionType_Index_1 = 1,
     CKYSBusinessCollegeBannerCellActionType_Index_2 = 2,

@@ -8,15 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-/*
- 1. 小白入门 2. 精英提升 3. 社群管理
- */
-
-typedef NS_ENUM(NSUInteger, CKYSBusinessCollegeWorkplaceItemCellType) {
-    CKYSBusinessCollegeWorkplaceItemCellTypeXBRM=0,//1. 小白入门
-    CKYSBusinessCollegeWorkplaceItemCellTypeJYTS=1,//2. 精英提升
-    CKYSBusinessCollegeWorkplaceItemCellTypeSQGL=2,//3. 社群管理
-};
+#import "CKYSBusinessCollegeWorkplaceItemCellTypeConst.h"
 
 @class CKYSBusinessCollegeWorkplaceCell;
 

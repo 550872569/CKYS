@@ -23,6 +23,7 @@
 #import "CKYSBusinessCollegeTitleMoreButtonViewDelegate.h"
 #import "CKYSBusinessCollegeBannerCell.h"
 #import "CKYSBusinessCollegeBannerCellDelegate.h"
+#import "CKYSBusinessCollegeTableViewDelegate.h"
 
 @interface CKYSBusinessCollegeTableView ()
 
@@ -37,7 +38,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @end
 
-@implementation CKYSBusinessCollegeTableView
+@implementation CKYSBusinessCollegeTableView {
+    __weak id<CKYSBusinessCollegeTableViewDelegate> _businessCollegeDelegate;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
     self = [super initWithFrame:frame style:style];
@@ -56,6 +59,10 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.showsHorizontalScrollIndicator = false;
     self.showsVerticalScrollIndicator = false;
+}
+
+- (void)setDelegate:(id<CKYSBusinessCollegeTableViewDelegate>)delegate {
+    _businessCollegeDelegate = delegate;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -96,58 +103,60 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 }
 
 #pragma mark -  Cell Delegate
 
 #pragma mark CKYSBusinessCollegeBannerCellDelegate
 - (void)businessCollegeBannerCell:(CKYSBusinessCollegeBannerCell *)cell actionType:(CKYSBusinessCollegeBannerCellActionType)type {
-    
+    if (_businessCollegeDelegate && [_businessCollegeDelegate respondsToSelector:@selector(businessCollegeTableViewBannerCellActionType:index:)]) {
+        [_businessCollegeDelegate businessCollegeTableViewBannerCellActionType:CKYSBusinessCollegeTableViewCellTypeBanner index:type];
+    }
 }
 
 #pragma mark CKYSBusinessCollegeWorkplaceCellDelegate
 - (void)businessCollegeWorkplaceCell:(CKYSBusinessCollegeWorkplaceCell *)cell actionType:(CKYSBusinessCollegeWorkplaceItemCellType)type {
-    switch (type) {
-            case CKYSBusinessCollegeWorkplaceItemCellTypeXBRM:
-            
-            break;
-            case CKYSBusinessCollegeWorkplaceItemCellTypeJYTS:
-            
-            break;
-            case CKYSBusinessCollegeWorkplaceItemCellTypeSQGL:
-            
-            break;
+    
+    if (_businessCollegeDelegate && [_businessCollegeDelegate respondsToSelector:@selector(businessCollegeTableViewWorkplaceCellActionType:indexType:)]) {
+        [_businessCollegeDelegate businessCollegeTableViewWorkplaceCellActionType:CKYSBusinessCollegeTableViewCellTypeWorkplace indexType:type];
     }
 }
 
 #pragma mark CKYSBusinessCollegeFreshListCellDelegate
 - (void)businessCollegeFreshListCellDelegateCell:(CKYSBusinessCollegeFreshListCell *)cell indexpath:(NSIndexPath *)indexpath {
-    
+    if (_businessCollegeDelegate && [_businessCollegeDelegate respondsToSelector:@selector(businessCollegeTableViewFreshListCellActionType:index:)]) {
+        [_businessCollegeDelegate businessCollegeTableViewFreshListCellActionType:CKYSBusinessCollegeTableViewCellTypeFreshList index:indexpath.row];
+    }
 }
 
 #pragma mark CKYSBusinessCollegeExcellentCourseCellDelegate
 - (void)businessCollegeExcellentCourseCellDelegateCell:(CKYSBusinessCollegeExcellentCourseCell *)cell indexpath:(NSIndexPath *)indexpath {
-    
+    if (_businessCollegeDelegate && [_businessCollegeDelegate respondsToSelector:@selector(businessCollegeTableViewExcellentCourseCellActionType:index:)]) {
+        [_businessCollegeDelegate businessCollegeTableViewExcellentCourseCellActionType:CKYSBusinessCollegeTableViewCellTypeExcellentCourse index:indexpath.row];
+    }
 }
 
 #pragma mark CKYSBusinessCollegeFamousTeacherCellDelegate
 - (void)businessCollegeFamousTeacherCellDelegateCell:(CKYSBusinessCollegeFamousTeacherCell *)cell indexpath:(NSIndexPath *)indexpath {
-    
+    if (_businessCollegeDelegate && [_businessCollegeDelegate respondsToSelector:@selector(businessCollegeTableViewFamousTeacherCellActionType:index:)]) {
+        [_businessCollegeDelegate businessCollegeTableViewFamousTeacherCellActionType:CKYSBusinessCollegeTableViewCellTypefFamousTeachers index:indexpath.row];
+    }
 }
 
 #pragma mark CKYSBusinessCollegeTitleMoreButtonViewDelegate
 - (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTableViewCellType)cellType moreAction:(UIButton *)sender {
+    CKYSBusinessCollegeTableViewCellType type = CKYSBusinessCollegeTableViewCellTypeBanner;
     if (cellType==CKYSBusinessCollegeTableViewCellTypeBanner) {
-        
     } else if (cellType==CKYSBusinessCollegeTableViewCellTypeWorkplace) {
-        
     } else if (cellType==CKYSBusinessCollegeTableViewCellTypeFreshList) {
-        
+        type = CKYSBusinessCollegeTableViewCellTypeFreshList;
     } else if (cellType==CKYSBusinessCollegeTableViewCellTypeExcellentCourse) {
-        
+        type = CKYSBusinessCollegeTableViewCellTypeExcellentCourse;
     } else if (cellType==CKYSBusinessCollegeTableViewCellTypefFamousTeachers) {
-        
+        type = CKYSBusinessCollegeTableViewCellTypefFamousTeachers;
+    }
+    if (_businessCollegeDelegate && [_businessCollegeDelegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
+        [_businessCollegeDelegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:type moreAction:sender];
     }
 }
 
