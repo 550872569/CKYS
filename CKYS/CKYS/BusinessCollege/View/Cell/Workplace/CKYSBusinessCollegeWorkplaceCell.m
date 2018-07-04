@@ -12,6 +12,10 @@
 #import "CKYSBusinessCollegeWorkplaceItemCell.h"
 #import "CKYSBusinessCollegeWorkplaceItem.h"
 #import "CKYSBusinessCollegeWorkplaceCellDelegate.h"
+#import "CKYSBusinessCollegeTableViewCellConst.h"
+
+#import "UIView+Category.h"
+#import "CKYSBusinessCollegeTableViewCellConst.h"
 
 @interface CKYSBusinessCollegeWorkplaceCell ()
 <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -69,11 +73,20 @@
     _businessCollegeWorkplaceItemView.dataSource = self;
     _businessCollegeWorkplaceItemView.showsHorizontalScrollIndicator = NO;
     [self.contentView addSubview:_businessCollegeWorkplaceItemView];
+
     [_businessCollegeWorkplaceItemView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.mas_equalTo(self.contentView);
+        make.left.top.mas_equalTo(self.contentView);
         make.right.mas_equalTo(self.contentView);
         make.height.equalTo(@(AdaptedHeight(105)));
         make.width.equalTo(@(SCREEN_WIDTH));
+    }];
+
+    UIView *viewBottom = [UIView instanceWithRect:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT) backgroundColor:CKYS_BC_TABLE_CELL_BOTTOM_COLOR_BG parentView:self.contentView];
+    [viewBottom mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_businessCollegeWorkplaceItemView.mas_bottom);
+        make.left.right.equalTo(_businessCollegeWorkplaceItemView);
+        make.height.equalTo(@(CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT));
+        make.bottom.equalTo(self.contentView);
     }];
 }
 

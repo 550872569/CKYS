@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C44C8B820EC5CE500ABD85D /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44C8B720EC5CE500ABD85D /* UIView+Category.m */; };
 		2CC1D6A820EB05E10088CFA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6A720EB05E10088CFA4 /* AppDelegate.m */; };
 		2CC1D6AB20EB05E10088CFA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6AA20EB05E10088CFA4 /* ViewController.m */; };
 		2CC1D6B620EB05E10088CFA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6B520EB05E10088CFA4 /* main.m */; };
@@ -52,6 +53,9 @@
 /* Begin PBXFileReference section */
 		0FD9513738C930D2354EC1CC /* libPods-CKYS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CKYS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C44C8B420EC578F00ABD85D /* CKYSBusinessCollegeTableViewCellTypeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewCellTypeConst.h; sourceTree = "<group>"; };
+		2C44C8B520EC5C5E00ABD85D /* CKYSBusinessCollegeTableViewCellConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewCellConst.h; sourceTree = "<group>"; };
+		2C44C8B620EC5CE500ABD85D /* UIView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		2C44C8B720EC5CE500ABD85D /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		2CC1D6A320EB05E10088CFA4 /* CKYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC1D6A620EB05E10088CFA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CC1D6A720EB05E10088CFA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -259,6 +263,7 @@
 				2CC1D6E320EB099C0088CFA4 /* CKYSBusinessCollegeTableView.h */,
 				2CC1D6E220EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m */,
 				2C44C8B420EC578F00ABD85D /* CKYSBusinessCollegeTableViewCellTypeConst.h */,
+				2C44C8B520EC5C5E00ABD85D /* CKYSBusinessCollegeTableViewCellConst.h */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -287,6 +292,8 @@
 			children = (
 				2CC1D74D20EB122F0088CFA4 /* UILabel+Category.h */,
 				2CC1D74E20EB122F0088CFA4 /* UILabel+Category.m */,
+				2C44C8B620EC5CE500ABD85D /* UIView+Category.h */,
+				2C44C8B720EC5CE500ABD85D /* UIView+Category.m */,
 			);
 			path = Catogery;
 			sourceTree = "<group>";
@@ -560,6 +567,7 @@
 				2CC1D73B20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m in Sources */,
 				2CC1D75B20EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.m in Sources */,
 				2CC1D75320EB16750088CFA4 /* CKYSBusinessCollegeExcellentCourseCell.m in Sources */,
+				2C44C8B820EC5CE500ABD85D /* UIView+Category.m in Sources */,
 				2CC1D6A820EB05E10088CFA4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,6 +21,9 @@
 #import "CKYSBusinessCollegeTitleMoreButtonView.h"
 #import "CKYSBusinessCollegeExcellentCourseItem.h"
 
+#import "UIView+Category.h"
+#import "CKYSBusinessCollegeTableViewCellConst.h"
+
 @interface CKYSBusinessCollegeExcellentCourseCell ()
 
 <UICollectionViewDelegate,
@@ -102,7 +105,14 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
         make.left.right.mas_equalTo(self.contentView);
         make.height.equalTo(@(CKYS_BCEC_ITEM_CELL_HEIGHT*4+CKYS_BCEC_ITEM_CELL_MARGIN*3));
         make.width.equalTo(@(SCREEN_WIDTH));
-        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-CKYS_BCEC_ITEM_CELL_BOTTOM_OFFSET);
+//        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-CKYS_BCEC_ITEM_CELL_BOTTOM_OFFSET);
+    }];
+    
+    UIView *view = [UIView instanceWithRect:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT) backgroundColor:CKYS_BC_TABLE_CELL_BOTTOM_COLOR_BG parentView:self.contentView];
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_businessCollegeExcellentCourseItemView.mas_bottom).with.offset(CKYS_BCEC_ITEM_CELL_BOTTOM_OFFSET);
+        make.height.equalTo(@(CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT));
+        make.left.right.bottom.equalTo(self.contentView);
     }];
 }
 
