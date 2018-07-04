@@ -74,7 +74,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     [self.contentView addSubview:_titleMoreButtonView];
     [_titleMoreButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.centerX.equalTo(self.contentView);
-        make.height.equalTo(@(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT));
+        make.height.equalTo(@(AdaptedHeight(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT)));
     }];
     [_titleMoreButtonView setTitle:@"新鲜出炉"];
 }
@@ -92,9 +92,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     _businessCollegeFreshListItemView.showsHorizontalScrollIndicator = NO;
     [self.contentView addSubview:_businessCollegeFreshListItemView];
     [_businessCollegeFreshListItemView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView.mas_top).with.offset(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT);
+        make.top.equalTo(self.contentView.mas_top).with.offset(AdaptedHeight(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT));
         make.left.right.bottom.mas_equalTo(self.contentView);
-        make.height.equalTo(@(CKYS_BCFL_ITEM_CELL_HEIGHT+CKYS_BCFL_ITEM_CELL_MARGIN_BOTTOM));
+        make.height.equalTo(@(AdaptedHeight(CKYS_BCFL_ITEM_CELL_HEIGHT+CKYS_BCFL_ITEM_CELL_MARGIN_BOTTOM)));
         make.width.equalTo(@(SCREEN_WIDTH));
     }];
 }
@@ -124,21 +124,21 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 /**设置每个item的尺寸*/
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(CKYS_BCFL_ITEM_CELL_WIDTH,CKYS_BCFL_ITEM_CELL_HEIGHT);
+    return CGSizeMake(AdaptedHeight(CKYS_BCFL_ITEM_CELL_WIDTH),AdaptedHeight(CKYS_BCFL_ITEM_CELL_HEIGHT));
 }
 
 /**设置每个item的UIEdgeInsets*/
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, CKYS_BCFL_ITEM_CELL_MARGIN_LEFT, CKYS_BCFL_ITEM_CELL_MARGIN_BOTTOM, 0);
+    return UIEdgeInsetsMake(0, AdaptedHeight(CKYS_BCFL_ITEM_CELL_MARGIN_LEFT), AdaptedHeight(CKYS_BCFL_ITEM_CELL_MARGIN_BOTTOM), 0);
 }
 
 /* SpacingForSection */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return CKYS_BCFL_ITEM_CELL_MARGIN_CLUME;
+    return AdaptedHeight(CKYS_BCFL_ITEM_CELL_MARGIN_CLUME);
 }
 /* LineSpacing */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return CKYS_BCFL_ITEM_CELL_MARGIN_ROW;
+    return AdaptedHeight(CKYS_BCFL_ITEM_CELL_MARGIN_ROW);
 }
 #pragma mark- UICollectionViewDelegate 点击跳转到对应页面
 
