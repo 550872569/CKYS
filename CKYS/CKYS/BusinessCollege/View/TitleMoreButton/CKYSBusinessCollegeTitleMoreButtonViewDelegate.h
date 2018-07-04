@@ -8,13 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CKYSBusinessCollegeTableViewCellTypeConst.h"
+
 @class CKYSBusinessCollegeTitleMoreButtonView;
 
 @protocol CKYSBusinessCollegeTitleMoreButtonViewDelegate <NSObject>
 
+@optional
+
 - (void)CKYSBusinessCollegeTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTitleMoreButtonView *)view moreAction:(UIButton *)sender;
 
-@optional
-- (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(UITableViewCell *)cell moreAction:(UIButton *)sender;
+- (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTableViewCellType)cellType moreAction:(UIButton *)sender;
+
 
 @end
+

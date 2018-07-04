@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		0FD9513738C930D2354EC1CC /* libPods-CKYS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CKYS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C44C8B420EC578F00ABD85D /* CKYSBusinessCollegeTableViewCellTypeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewCellTypeConst.h; sourceTree = "<group>"; };
 		2CC1D6A320EB05E10088CFA4 /* CKYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC1D6A620EB05E10088CFA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2CC1D6A720EB05E10088CFA4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -257,6 +258,7 @@
 			children = (
 				2CC1D6E320EB099C0088CFA4 /* CKYSBusinessCollegeTableView.h */,
 				2CC1D6E220EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m */,
+				2C44C8B420EC578F00ABD85D /* CKYSBusinessCollegeTableViewCellTypeConst.h */,
 			);
 			path = TableView;
 			sourceTree = "<group>";

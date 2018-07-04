@@ -163,7 +163,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 #pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
 - (void)CKYSBusinessCollegeTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTitleMoreButtonView *)view moreAction:(UIButton *)sender {
     if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
-        [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:self moreAction:sender];
+        [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:CKYSBusinessCollegeTableViewCellTypeExcellentCourse moreAction:sender];
     }
 }
 

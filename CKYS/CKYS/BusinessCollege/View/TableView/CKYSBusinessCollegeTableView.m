@@ -57,12 +57,16 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeWorkplace) {
+    if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeBanner) {
+        CKYSBusinessCollegeWorkplaceCell *cell = [CKYSBusinessCollegeWorkplaceCell cellWithTableView:tableView];
+        [cell setDelegate:(id)self];
+        return cell;
+    } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeWorkplace) {
         CKYSBusinessCollegeWorkplaceCell *cell = [CKYSBusinessCollegeWorkplaceCell cellWithTableView:tableView];
         [cell setDelegate:(id)self];
         return cell;
@@ -123,12 +127,16 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 }
 
 #pragma mark - CKYSBusinessCollegeTitleMoreButtonViewDelegate
-- (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(UITableViewCell *)cell moreAction:(UIButton *)sender {
-    if ([cell isKindOfClass:NSClassFromString(@"CKYSBusinessCollegeFamousTeacherCell")]) {
+- (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTableViewCellType)cellType moreAction:(UIButton *)sender {
+    if (cellType==CKYSBusinessCollegeTableViewCellTypeBanner) {
         
-    } else if ([cell isKindOfClass:NSClassFromString(@"CKYSBusinessCollegeExcellentCourseCell")]) {
+    } else if (cellType==CKYSBusinessCollegeTableViewCellTypeWorkplace) {
         
-    } else if ([cell isKindOfClass:NSClassFromString(@"CKYSBusinessCollegeFreshListCell")]) {
+    } else if (cellType==CKYSBusinessCollegeTableViewCellTypeFreshList) {
+        
+    } else if (cellType==CKYSBusinessCollegeTableViewCellTypeExcellentCourse) {
+        
+    } else if (cellType==CKYSBusinessCollegeTableViewCellTypefFamousTeachers) {
         
     }
 }
