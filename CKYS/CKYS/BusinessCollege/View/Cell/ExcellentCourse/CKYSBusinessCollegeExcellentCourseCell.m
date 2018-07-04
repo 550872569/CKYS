@@ -78,7 +78,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     [self.contentView addSubview:_titleMoreButtonView];
     [_titleMoreButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.centerX.equalTo(self.contentView);
-        make.height.equalTo(@(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT));
+        make.height.equalTo(@(AdaptedHeight(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT)));
     }];
     [_titleMoreButtonView setTitle:@"精品课程"];
 }

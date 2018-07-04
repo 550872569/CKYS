@@ -31,6 +31,8 @@
 
 @implementation CKYSBusinessCollegeWorkplaceCell
 
+#define CKYS_BC_CW_ITEM_CELL_HEIGHT 105
+
 - (void)setDelegate:(id<CKYSBusinessCollegeWorkplaceCellDelegate>)delegate {
     _delegate = delegate;
 }
@@ -77,7 +79,7 @@
     [_businessCollegeWorkplaceItemView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.mas_equalTo(self.contentView);
         make.right.mas_equalTo(self.contentView);
-        make.height.equalTo(@(AdaptedHeight(105)));
+        make.height.equalTo(@(AdaptedHeight(CKYS_BC_CW_ITEM_CELL_HEIGHT)));
         make.width.equalTo(@(SCREEN_WIDTH));
     }];
 
@@ -85,7 +87,7 @@
     [viewBottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_businessCollegeWorkplaceItemView.mas_bottom);
         make.left.right.equalTo(_businessCollegeWorkplaceItemView);
-        make.height.equalTo(@(CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT));
+        make.height.equalTo(@(AdaptedHeight(CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT)));
         make.bottom.equalTo(self.contentView);
     }];
 }

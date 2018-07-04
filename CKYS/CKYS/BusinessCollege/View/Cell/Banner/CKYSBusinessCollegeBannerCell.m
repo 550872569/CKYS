@@ -52,7 +52,7 @@
     _bannerView.imageURLStringsGroup = nil;
     _bannerView.currentPageDotColor = [UIColor whiteColor];
     _bannerView.pageDotColor = [UIColor colorWithRed:197/255.0 green:197/255.0 blue:206/255.0 alpha:1];
-    _bannerView.pageControlDotSize = CGSizeMake(8, 8);
+    _bannerView.pageControlDotSize = CGSizeMake(AdaptedHeight(8), AdaptedHeight(8));
     _bannerView.localizationImageNamesGroup = @[@"ckys_businessCollega_banner_placeholder",@"ckys_businessCollega_banner_placeholder",@"ckys_businessCollega_banner_placeholder",@"ckys_businessCollega_banner_placeholder",];
     [self.contentView addSubview:_bannerView];
     [_bannerView mas_makeConstraints:^(MASConstraintMaker *make) {

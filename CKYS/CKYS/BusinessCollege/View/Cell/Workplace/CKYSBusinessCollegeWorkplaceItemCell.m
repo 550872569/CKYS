@@ -35,17 +35,17 @@
     _itemImageView = [[UIImageView alloc] init];
     [self.contentView addSubview:_itemImageView];
     [_itemImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_offset(15);
-        make.width.mas_offset((53));
-        make.height.mas_offset((53));
+        make.top.mas_offset(AdaptedHeight(15));
+        make.width.mas_offset(AdaptedHeight(53));
+        make.height.mas_offset(AdaptedHeight(53));
         make.centerX.equalTo(self.contentView);
     }];
     _itemLabel = [UILabel labelWithTitle:@"" titleFont:15 backgroundColor:[UIColor clearColor] textAlignment:NSTextAlignmentCenter ract:CGRectMake(0, 0, 15*4+5, 15) numberOfLines:1 textColor:[UIColor colorWithRed:51.0026/255.0 green:51.0026/255.0 blue:51.0026/255.0 alpha:1]];
     [self.contentView addSubview:_itemLabel];
     [_itemLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(_itemImageView);
-        make.top.equalTo(_itemImageView.mas_bottom).with.offset(9);
-        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-15);
+        make.top.equalTo(_itemImageView.mas_bottom).with.offset(AdaptedHeight(9));
+        make.bottom.equalTo(self.contentView.mas_bottom).with.offset((-AdaptedHeight(15)));
     }];
 }
 
