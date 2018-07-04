@@ -55,8 +55,8 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
     _imageView.layer.cornerRadius = CKYS_BCFT_ITEM_CELL_IMAGE_WIDTH*0.5;
     _imageView.layer.masksToBounds = YES;
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_offset((CKYS_BCFT_ITEM_CELL_IMAGE_WIDTH));
-        make.height.mas_offset((CKYS_BCFT_ITEM_CELL_IMAGE_HEIGHT));
+        make.width.mas_offset(CKYS_BCFT_ITEM_CELL_IMAGE_WIDTH);
+        make.height.mas_offset(CKYS_BCFT_ITEM_CELL_IMAGE_HEIGHT);
         make.top.equalTo(self.contentView.mas_top).with.offset(17);
         make.centerX.equalTo(self.contentView);
     }];
@@ -65,7 +65,7 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
     [self.contentView addSubview:_labelTitle];
     
     [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_offset(AdaptedWidth(CKYS_BCFT_ITEM_CELL_WIDTH));
+        make.width.mas_offset(AdaptedWidth(99));
         make.centerX.mas_equalTo(_imageView);
         make.top.equalTo(_imageView.mas_bottom).with.offset(14);
     }];

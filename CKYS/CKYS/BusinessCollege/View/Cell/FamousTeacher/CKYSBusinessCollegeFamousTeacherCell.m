@@ -40,7 +40,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @implementation CKYSBusinessCollegeFamousTeacherCell
 
-#define CKYS_BCFT_CELL_HRIGHT 211
+#define CKYS_BCFT_CELL_HEIGHT 219
 
 - (void)setDelegate:(id<CKYSBusinessCollegeFamousTeacherCellDelegate>)delegate {
     _delegate = delegate;
@@ -102,7 +102,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
         
         make.top.equalTo(_titleMoreButtonView.mas_bottom);
         make.left.right.mas_equalTo(self.contentView);
-        make.height.equalTo(@(CKYS_BCFT_CELL_HRIGHT-(AdaptedHeight(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT))));
+        make.height.equalTo(@(CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET+CKYS_BCFT_ITEM_CELL_HEIGHT));
         make.width.equalTo(@(SCREEN_WIDTH));
         make.bottom.equalTo(self.contentView.mas_bottom);
     }];

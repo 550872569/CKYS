@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#define CKYS_BCFT_ITEM_CELL_HEIGHT  147
+#define CKYS_BCFT_ITEM_CELL_HEIGHT  155
 #define CKYS_BCFT_ITEM_CELL_WIDTH   131
 //extern CGFloat CKYS_BCFT_ITEM_CELL_HEIGHT;
 //
