@@ -50,7 +50,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     self.estimatedRowHeight = 200.f;
     self.backgroundColor = [UIColor grayColor];
     self.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
-    self.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    self.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.showsHorizontalScrollIndicator = false;
+    self.showsVerticalScrollIndicator = false;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
