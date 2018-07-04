@@ -102,7 +102,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
         
         make.top.equalTo(_titleMoreButtonView.mas_bottom);
         make.left.right.mas_equalTo(self.contentView);
-        make.height.equalTo(@(CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET+CKYS_BCFT_ITEM_CELL_HEIGHT));
+        make.height.equalTo(@(AdaptedHeight(CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET+CKYS_BCFT_ITEM_CELL_HEIGHT)));
         make.width.equalTo(@(SCREEN_WIDTH));
         make.bottom.equalTo(self.contentView.mas_bottom);
     }];
@@ -133,16 +133,16 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 /**设置每个item的尺寸*/
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(CKYS_BCFT_ITEM_CELL_WIDTH,CKYS_BCFT_ITEM_CELL_HEIGHT);
+    return CGSizeMake(AdaptedWidth(CKYS_BCFT_ITEM_CELL_WIDTH),AdaptedHeight(CKYS_BCFT_ITEM_CELL_HEIGHT));
 }
 
 /* 设置每个item的UIEdgeInsets */
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(0, CKYS_BCFT_ITEM_CELL_MARGIN, CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET, 0);
+    return UIEdgeInsetsMake(0, CKYS_BCFT_ITEM_CELL_MARGIN, AdaptedHeight(CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET), 0);
 }
 /* SpacingForSection */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET;
+    return AdaptedHeight(CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET);
 }
 /* LineSpacing */
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {

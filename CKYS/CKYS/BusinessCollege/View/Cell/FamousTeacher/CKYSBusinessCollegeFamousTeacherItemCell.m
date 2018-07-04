@@ -15,10 +15,6 @@
 
 #import "CKYSBusinessCollegeFamousTeacherItem.h"
 
-//CGFloat CKYS_BCFT_ITEM_CELL_HEIGHT = 147;
-//
-//CGFloat CKYS_BCFT_ITEM_CELL_WIDTH = 131;
-
 CGFloat CKYS_BCFT_ITEM_CELL_MARGIN = 10;
 
 CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
@@ -52,12 +48,12 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
     _imageView = [[UIImageView alloc] init];
     [self.contentView addSubview:_imageView];
     _imageView.backgroundColor = [UIColor grayColor];
-    _imageView.layer.cornerRadius = CKYS_BCFT_ITEM_CELL_IMAGE_WIDTH*0.5;
+    _imageView.layer.cornerRadius = AdaptedHeight(CKYS_BCFT_ITEM_CELL_IMAGE_WIDTH)*0.5;
     _imageView.layer.masksToBounds = YES;
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_offset(CKYS_BCFT_ITEM_CELL_IMAGE_WIDTH);
-        make.height.mas_offset(CKYS_BCFT_ITEM_CELL_IMAGE_HEIGHT);
-        make.top.equalTo(self.contentView.mas_top).with.offset(17);
+        make.width.mas_offset(AdaptedHeight(CKYS_BCFT_ITEM_CELL_IMAGE_WIDTH));
+        make.height.mas_offset(AdaptedHeight(CKYS_BCFT_ITEM_CELL_IMAGE_HEIGHT));
+        make.top.equalTo(self.contentView.mas_top).with.offset(AdaptedHeight(17));
         make.centerX.equalTo(self.contentView);
     }];
     
@@ -67,7 +63,7 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
     [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_offset(AdaptedWidth(99));
         make.centerX.mas_equalTo(_imageView);
-        make.top.equalTo(_imageView.mas_bottom).with.offset(14);
+        make.top.equalTo(_imageView.mas_bottom).with.offset(AdaptedHeight(14));
     }];
     
     _labelSubTitle = [UILabel labelWithTitle:@"" titleFont:13 backgroundColor:[UIColor clearColor] textAlignment:NSTextAlignmentCenter ract:CGRectZero numberOfLines:1 textColor:[UIColor colorWithRed:101.997/255.0 green:101.997/255.0 blue:101.997/255.0 alpha:1]];
@@ -76,8 +72,8 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
     [_labelSubTitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_offset(AdaptedWidth(99));
         make.centerX.mas_equalTo(_imageView);
-        make.top.equalTo(_labelTitle.mas_bottom).with.offset(9);
-        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-16);
+        make.top.equalTo(_labelTitle.mas_bottom).with.offset(AdaptedHeight(9));
+        make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-AdaptedHeight(16));
     }];
 }
 
