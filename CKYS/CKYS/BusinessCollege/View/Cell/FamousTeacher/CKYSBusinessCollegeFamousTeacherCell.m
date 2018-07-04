@@ -80,6 +80,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
         make.height.equalTo(@(AdaptedHeight(CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT)));
     }];
     [_titleMoreButtonView setTitle:@"名师推荐"];
+    [_titleMoreButtonView setButtonMoreHidden:false];
 }
 
 - (void)initItemView {

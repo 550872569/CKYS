@@ -23,6 +23,8 @@ CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT = 47;
 
 @property (nonatomic, strong) UILabel *labelTitle;
 
+@property (nonatomic, strong) UIButton *buttonMore;
+
 @end
 
 @implementation CKYSBusinessCollegeTitleMoreButtonView {
@@ -57,9 +59,9 @@ CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT = 47;
         make.centerX.centerY.equalTo(self);
     }];
     
-    UIButton *buttonMore = [UIButton buttonWithTitle:@"更多>" titleFont:13 titleColorNormal:[UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1] titleColorHilight:[UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1] titleColorDisable:[UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1] backgroundImageNoraml:nil backgroundImageHilight:nil backgroundImageDisable:nil backgroundColor:[UIColor clearColor] cornerRadius:0 enabled:true rect:CGRectZero Targrt:self action:@selector(buttonMoreAction:) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:buttonMore];
-    [buttonMore mas_makeConstraints:^(MASConstraintMaker *make) {
+    _buttonMore = [UIButton buttonWithTitle:@"更多>" titleFont:13 titleColorNormal:[UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1] titleColorHilight:[UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1] titleColorDisable:[UIColor colorWithRed:135.999/255.0 green:135.999/255.0 blue:135.999/255.0 alpha:1] backgroundImageNoraml:nil backgroundImageHilight:nil backgroundImageDisable:nil backgroundColor:[UIColor clearColor] cornerRadius:0 enabled:true rect:CGRectZero Targrt:self action:@selector(_buttonMoreAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_buttonMore];
+    [_buttonMore mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self);
         make.right.equalTo(self.mas_right).with.offset(-11);
         make.width.equalTo(@40);
@@ -69,7 +71,7 @@ CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT = 47;
     [self addSubview:buttonClearColor];
     [buttonClearColor mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.bottom.equalTo(self);
-        make.right.equalTo(buttonMore.mas_left);
+        make.right.equalTo(_buttonMore.mas_left);
     }];
 }
 
@@ -77,10 +79,14 @@ CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT = 47;
     return;
 }
 
-- (void)buttonMoreAction:(UIButton *)sender {
+- (void)_buttonMoreAction:(UIButton *)sender {
     if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeTitleMoreButtonViewDelegate:moreAction:)]) {
         [_delegate CKYSBusinessCollegeTitleMoreButtonViewDelegate:self moreAction:sender];
     }
+}
+
+- (void)setButtonMoreHidden:(BOOL)hidden {
+    _buttonMore.hidden = hidden;
 }
 
 @end

@@ -18,4 +18,6 @@ extern CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT;
 
 - (void)setTitle:(NSString *)title;
 
+- (void)setButtonMoreHidden:(bool)hidden;
+
 @end
