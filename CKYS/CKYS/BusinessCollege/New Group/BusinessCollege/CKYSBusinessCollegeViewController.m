@@ -1,18 +1,26 @@
 //
 //  CKYSBusinessCollegeViewController.m
-//  TableViewAutoHeight
+//  CKYS
 //
-//  Created by 密码：123 on 18/7/2.
+//  Created by Yan on 18/7/2.
 //  Copyright © 2018年 Yan. All rights reserved.
 //
 
 #import "CKYSBusinessCollegeViewController.h"
 #import "CKYSBusinessCollegeTableView.h"
 #import "CKYSBusinessCollegeTableViewDelegate.h"
-#import "CKYSBCCourseListViewController.h"
+#import "CKYSBCExcellentCourseViewController.h"
 #import "CKYSBCCourseDetailViewController.h"
 #import "CKYSBCTeacherListViewController.h"
 #import "CKYSBCTeacherDetailViewController.h"
+
+
+#import "CKYSBusinessCollegeXBRMViewController.h"
+#import "CKYSBusinessCollegeJYTSViewController.h"
+#import "CKYSBusinessCollegeSQGLViewController.h"
+
+#import "CKYSBusinessCollegeFreshListViewController.h"
+#import "CKYSBCHotCourseViewController.h"
 
 #define VGScreenW [UIScreen mainScreen].bounds.size.width
 #define VGScreenH [UIScreen mainScreen].bounds.size.height
@@ -26,16 +34,20 @@
 
 @implementation CKYSBusinessCollegeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self configTableView];
+- (void)loadView {
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-STATUS_AND_NAVIGATION_HEIGHT)];
+    [self initTableView];
 }
 
-- (void)configTableView {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (void)initTableView {
     self.view.backgroundColor =  [UIColor whiteColor];
     CKYSBusinessCollegeTableView *tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, VGScreenW, VGScreenH-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
     tableView.backgroundColor = [UIColor grayColor];
-    [tableView setDelegate:self];
+    [tableView setBusinessCollegeDelegate:self];
     [self.view addSubview:tableView];
 }
 
@@ -44,13 +56,19 @@
 #pragma mark 轮播图
 - (void)businessCollegeTableViewBannerCellActionType:(CKYSBusinessCollegeTableViewCellType)type index:(CKYSBusinessCollegeBannerCellActionType)index {
     NSLog(@"type%ld index:%ld",type,index);
-    [self pushToCourseDetailViewController];
+    [self pushToObjViewController:[[CKYSBCHotCourseViewController alloc] init]];
 }
 
 #pragma mark 小白 精英 管理
 - (void)businessCollegeTableViewWorkplaceCellActionType:(CKYSBusinessCollegeTableViewCellType)type indexType:(CKYSBusinessCollegeWorkplaceItemCellType)indexType {
     NSLog(@"type%ld indexType:%ld",type,indexType);
-    [self pushToCourseListViewController];
+    if (indexType == CKYSBusinessCollegeWorkplaceItemCellTypeXBRM) {
+        [self pushToObjViewController:[[CKYSBusinessCollegeXBRMViewController alloc] init]];
+    } else if (indexType == CKYSBusinessCollegeWorkplaceItemCellTypeJYTS) {
+        [self pushToObjViewController:[[CKYSBusinessCollegeJYTSViewController alloc] init]];
+    } else if (indexType == CKYSBusinessCollegeWorkplaceItemCellTypeSQGL) {
+        [self pushToObjViewController:[[CKYSBusinessCollegeSQGLViewController alloc] init]];
+    }
 }
 
 #pragma mark 新鲜出炉
@@ -62,7 +80,7 @@
 #pragma mark 精品课程
 - (void)businessCollegeTableViewExcellentCourseCellActionType:(CKYSBusinessCollegeTableViewCellType)type index:(NSInteger)index {
     NSLog(@"type%ld index:%ld",type,index);
-    [self pushToCourseDetailViewController];
+    [self pushToObjViewController:[[CKYSBCExcellentCourseViewController alloc] init]];
 }
 
 #pragma mark 名师推荐
@@ -76,15 +94,17 @@
     NSLog(@"cellType%ld",cellType);
     if (cellType==CKYSBusinessCollegeTableViewCellTypefFamousTeachers) {
         [self pushToTeacherListViewController];
-    } else if (cellType==CKYSBusinessCollegeTableViewCellTypeExcellentCourse || cellType==CKYSBusinessCollegeTableViewCellTypeFreshList) {
+    } else if (cellType==CKYSBusinessCollegeTableViewCellTypeExcellentCourse) {
         [self pushToCourseListViewController];
+    } else if (cellType==CKYSBusinessCollegeTableViewCellTypeFreshList) {
+        [self pushToObjViewController:[[CKYSBusinessCollegeFreshListViewController alloc] init]];
     }
 }
 
 #pragma mark -  private
 /** 职场 & 更多 */
 - (void)pushToCourseListViewController {
-    [self.navigationController pushViewController:[[CKYSBCCourseListViewController alloc] init] animated:true];
+    [self.navigationController pushViewController:[[CKYSBCExcellentCourseViewController alloc] init] animated:true];
 }
 
 /** 课程详情 */
@@ -100,6 +120,11 @@
 /** 讲师主页 */
 - (void)pushToTeacherDetailViewController {
     [self.navigationController pushViewController:[[CKYSBCTeacherDetailViewController alloc] init] animated:true];
+}
+
+/** 职场vc */
+- (void)pushToObjViewController:(UIViewController *)objViewController {
+    [self.navigationController pushViewController:objViewController animated:true];
 }
 
 @end

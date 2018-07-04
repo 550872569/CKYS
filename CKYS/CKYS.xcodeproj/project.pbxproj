@@ -11,9 +11,16 @@
 		2C1A9EBA20ECA6E300E21FEA /* CKYSBCTeacherListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9EB920ECA6E300E21FEA /* CKYSBCTeacherListViewController.m */; };
 		2C1A9EBD20ECA7F800E21FEA /* CKYSBCTeacherDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9EBC20ECA7F800E21FEA /* CKYSBCTeacherDetailViewController.m */; };
 		2C1A9EC120ECA95300E21FEA /* CKYSBCSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9EC020ECA95300E21FEA /* CKYSBCSearchViewController.m */; };
+		2C1A9EC520ECAFB200E21FEA /* CKYSBCSearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9EC420ECAFB200E21FEA /* CKYSBCSearchItem.m */; };
+		2C1A9EC920ECB12E00E21FEA /* UIViewController+SearchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9EC820ECB12E00E21FEA /* UIViewController+SearchItem.m */; };
+		2C1A9ECC20ECB4FF00E21FEA /* CKYSBusinessCollegeXBRMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9ECB20ECB4FF00E21FEA /* CKYSBusinessCollegeXBRMViewController.m */; };
+		2C1A9ECF20ECB51700E21FEA /* CKYSBusinessCollegeJYTSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9ECE20ECB51700E21FEA /* CKYSBusinessCollegeJYTSViewController.m */; };
+		2C1A9ED220ECB56900E21FEA /* CKYSBusinessCollegeSQGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9ED120ECB56900E21FEA /* CKYSBusinessCollegeSQGLViewController.m */; };
+		2C1A9ED520ECB70800E21FEA /* CKYSBusinessCollegeFreshListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9ED420ECB70800E21FEA /* CKYSBusinessCollegeFreshListViewController.m */; };
+		2C1A9ED920ECB7FE00E21FEA /* CKYSBCHotCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C1A9ED820ECB7FE00E21FEA /* CKYSBCHotCourseViewController.m */; };
 		2C44C8B820EC5CE500ABD85D /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44C8B720EC5CE500ABD85D /* UIView+Category.m */; };
 		2C44C8BC20EC61B400ABD85D /* CKYSBusinessCollegeBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44C8BB20EC61B400ABD85D /* CKYSBusinessCollegeBannerCell.m */; };
-		2C44C8C520EC910500ABD85D /* CKYSBCCourseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44C8C420EC910500ABD85D /* CKYSBCCourseListViewController.m */; };
+		2C44C8C520EC910500ABD85D /* CKYSBCExcellentCourseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C44C8C420EC910500ABD85D /* CKYSBCExcellentCourseViewController.m */; };
 		2CC1D6A820EB05E10088CFA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6A720EB05E10088CFA4 /* AppDelegate.m */; };
 		2CC1D6B620EB05E10088CFA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6B520EB05E10088CFA4 /* main.m */; };
 		2CC1D6C020EB05E10088CFA4 /* CKYSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D6BF20EB05E10088CFA4 /* CKYSTests.m */; };
@@ -66,6 +73,20 @@
 		2C1A9EBC20ECA7F800E21FEA /* CKYSBCTeacherDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBCTeacherDetailViewController.m; sourceTree = "<group>"; };
 		2C1A9EBF20ECA95300E21FEA /* CKYSBCSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBCSearchViewController.h; sourceTree = "<group>"; };
 		2C1A9EC020ECA95300E21FEA /* CKYSBCSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBCSearchViewController.m; sourceTree = "<group>"; };
+		2C1A9EC320ECAFB200E21FEA /* CKYSBCSearchItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBCSearchItem.h; sourceTree = "<group>"; };
+		2C1A9EC420ECAFB200E21FEA /* CKYSBCSearchItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBCSearchItem.m; sourceTree = "<group>"; };
+		2C1A9EC720ECB12E00E21FEA /* UIViewController+SearchItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+SearchItem.h"; sourceTree = "<group>"; };
+		2C1A9EC820ECB12E00E21FEA /* UIViewController+SearchItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+SearchItem.m"; sourceTree = "<group>"; };
+		2C1A9ECA20ECB4FF00E21FEA /* CKYSBusinessCollegeXBRMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeXBRMViewController.h; sourceTree = "<group>"; };
+		2C1A9ECB20ECB4FF00E21FEA /* CKYSBusinessCollegeXBRMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeXBRMViewController.m; sourceTree = "<group>"; };
+		2C1A9ECD20ECB51700E21FEA /* CKYSBusinessCollegeJYTSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeJYTSViewController.h; sourceTree = "<group>"; };
+		2C1A9ECE20ECB51700E21FEA /* CKYSBusinessCollegeJYTSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeJYTSViewController.m; sourceTree = "<group>"; };
+		2C1A9ED020ECB56900E21FEA /* CKYSBusinessCollegeSQGLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeSQGLViewController.h; sourceTree = "<group>"; };
+		2C1A9ED120ECB56900E21FEA /* CKYSBusinessCollegeSQGLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeSQGLViewController.m; sourceTree = "<group>"; };
+		2C1A9ED320ECB70800E21FEA /* CKYSBusinessCollegeFreshListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeFreshListViewController.h; sourceTree = "<group>"; };
+		2C1A9ED420ECB70800E21FEA /* CKYSBusinessCollegeFreshListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeFreshListViewController.m; sourceTree = "<group>"; };
+		2C1A9ED720ECB7FE00E21FEA /* CKYSBCHotCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBCHotCourseViewController.h; sourceTree = "<group>"; };
+		2C1A9ED820ECB7FE00E21FEA /* CKYSBCHotCourseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBCHotCourseViewController.m; sourceTree = "<group>"; };
 		2C44C8B420EC578F00ABD85D /* CKYSBusinessCollegeTableViewCellTypeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewCellTypeConst.h; sourceTree = "<group>"; };
 		2C44C8B520EC5C5E00ABD85D /* CKYSBusinessCollegeTableViewCellConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewCellConst.h; sourceTree = "<group>"; };
 		2C44C8B620EC5CE500ABD85D /* UIView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
@@ -73,8 +94,8 @@
 		2C44C8BA20EC61B400ABD85D /* CKYSBusinessCollegeBannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeBannerCell.h; sourceTree = "<group>"; };
 		2C44C8BB20EC61B400ABD85D /* CKYSBusinessCollegeBannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeBannerCell.m; sourceTree = "<group>"; };
 		2C44C8BD20EC61F500ABD85D /* CKYSBusinessCollegeBannerCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeBannerCellDelegate.h; sourceTree = "<group>"; };
-		2C44C8C320EC910500ABD85D /* CKYSBCCourseListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBCCourseListViewController.h; sourceTree = "<group>"; };
-		2C44C8C420EC910500ABD85D /* CKYSBCCourseListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBCCourseListViewController.m; sourceTree = "<group>"; };
+		2C44C8C320EC910500ABD85D /* CKYSBCExcellentCourseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBCExcellentCourseViewController.h; sourceTree = "<group>"; };
+		2C44C8C420EC910500ABD85D /* CKYSBCExcellentCourseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBCExcellentCourseViewController.m; sourceTree = "<group>"; };
 		2C44C8C620EC923300ABD85D /* CKYSBusinessCollegeTableViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewDelegate.h; sourceTree = "<group>"; };
 		2CC1D6A320EB05E10088CFA4 /* CKYS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CKYS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC1D6A620EB05E10088CFA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -165,6 +186,33 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		2C1A9EC220ECAF6C00E21FEA /* SearchItem */ = {
+			isa = PBXGroup;
+			children = (
+				2C1A9EC320ECAFB200E21FEA /* CKYSBCSearchItem.h */,
+				2C1A9EC420ECAFB200E21FEA /* CKYSBCSearchItem.m */,
+			);
+			path = SearchItem;
+			sourceTree = "<group>";
+		};
+		2C1A9EC620ECB10900E21FEA /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2C1A9EC720ECB12E00E21FEA /* UIViewController+SearchItem.h */,
+				2C1A9EC820ECB12E00E21FEA /* UIViewController+SearchItem.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		2C1A9ED620ECB78400E21FEA /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				2C1A9ED720ECB7FE00E21FEA /* CKYSBCHotCourseViewController.h */,
+				2C1A9ED820ECB7FE00E21FEA /* CKYSBCHotCourseViewController.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 		2C44C8B920EC5F9C00ABD85D /* Banner */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +235,12 @@
 		2C44C8BF20EC8E7D00ABD85D /* Workplace */ = {
 			isa = PBXGroup;
 			children = (
+				2C1A9ECA20ECB4FF00E21FEA /* CKYSBusinessCollegeXBRMViewController.h */,
+				2C1A9ECB20ECB4FF00E21FEA /* CKYSBusinessCollegeXBRMViewController.m */,
+				2C1A9ECD20ECB51700E21FEA /* CKYSBusinessCollegeJYTSViewController.h */,
+				2C1A9ECE20ECB51700E21FEA /* CKYSBusinessCollegeJYTSViewController.m */,
+				2C1A9ED020ECB56900E21FEA /* CKYSBusinessCollegeSQGLViewController.h */,
+				2C1A9ED120ECB56900E21FEA /* CKYSBusinessCollegeSQGLViewController.m */,
 			);
 			path = Workplace;
 			sourceTree = "<group>";
@@ -194,6 +248,8 @@
 		2C44C8C020EC8E8B00ABD85D /* FreshList */ = {
 			isa = PBXGroup;
 			children = (
+				2C1A9ED320ECB70800E21FEA /* CKYSBusinessCollegeFreshListViewController.h */,
+				2C1A9ED420ECB70800E21FEA /* CKYSBusinessCollegeFreshListViewController.m */,
 			);
 			path = FreshList;
 			sourceTree = "<group>";
@@ -201,8 +257,8 @@
 		2C44C8C120EC8E9300ABD85D /* ExcellentCourse */ = {
 			isa = PBXGroup;
 			children = (
-				2C44C8C320EC910500ABD85D /* CKYSBCCourseListViewController.h */,
-				2C44C8C420EC910500ABD85D /* CKYSBCCourseListViewController.m */,
+				2C44C8C320EC910500ABD85D /* CKYSBCExcellentCourseViewController.h */,
+				2C44C8C420EC910500ABD85D /* CKYSBCExcellentCourseViewController.m */,
 				2C1A9EB520ECA4DC00E21FEA /* CKYSBCCourseDetailViewController.h */,
 				2C1A9EB620ECA4DC00E21FEA /* CKYSBCCourseDetailViewController.m */,
 			);
@@ -287,11 +343,13 @@
 			isa = PBXGroup;
 			children = (
 				2C44C8BE20EC8E2200ABD85D /* BusinessCollege */,
+				2C1A9ED620ECB78400E21FEA /* Banner */,
 				2C44C8BF20EC8E7D00ABD85D /* Workplace */,
 				2C44C8C020EC8E8B00ABD85D /* FreshList */,
 				2C44C8C120EC8E9300ABD85D /* ExcellentCourse */,
 				2C44C8C220EC8EA700ABD85D /* FamousTeacher */,
 				2C1A9EBE20ECA93500E21FEA /* Search */,
+				2C1A9EC620ECB10900E21FEA /* Category */,
 			);
 			name = ViewController;
 			path = "New Group";
@@ -300,6 +358,7 @@
 		2CC1D6DE20EB09780088CFA4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C1A9EC220ECAF6C00E21FEA /* SearchItem */,
 				2CC1D75820EB1B950088CFA4 /* TitleMoreButton */,
 				2CC1D74920EB0DC80088CFA4 /* TableView */,
 				2CC1D74A20EB0DD50088CFA4 /* Cell */,
@@ -638,10 +697,13 @@
 			files = (
 				2CC1D6E420EB099C0088CFA4 /* CKYSBusinessCollegeTableView.m in Sources */,
 				2CC1D76A20EB47A60088CFA4 /* CKYSBusinessCollegeFamousTeacherItemCell.m in Sources */,
+				2C1A9EC920ECB12E00E21FEA /* UIViewController+SearchItem.m in Sources */,
+				2C1A9ECC20ECB4FF00E21FEA /* CKYSBusinessCollegeXBRMViewController.m in Sources */,
 				2CC1D6B620EB05E10088CFA4 /* main.m in Sources */,
 				2C1A9EC120ECA95300E21FEA /* CKYSBCSearchViewController.m in Sources */,
 				2CC1D6E120EB09940088CFA4 /* CKYSBusinessCollegeViewController.m in Sources */,
-				2C44C8C520EC910500ABD85D /* CKYSBCCourseListViewController.m in Sources */,
+				2C1A9EC520ECAFB200E21FEA /* CKYSBCSearchItem.m in Sources */,
+				2C44C8C520EC910500ABD85D /* CKYSBCExcellentCourseViewController.m in Sources */,
 				2CC1D74F20EB122F0088CFA4 /* UILabel+Category.m in Sources */,
 				2C44C8BC20EC61B400ABD85D /* CKYSBusinessCollegeBannerCell.m in Sources */,
 				2CC1D76720EB47800088CFA4 /* CKYSBusinessCollegeFamousTeacherCell.m in Sources */,
@@ -653,14 +715,18 @@
 				2CC1D74620EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m in Sources */,
 				2CC1D76320EB299B0088CFA4 /* CKYSBusinessCollegeExcellentCourseItem.m in Sources */,
 				2CC1D76F20EB4B090088CFA4 /* CKYSBusinessCollegeFamousTeacherItem.m in Sources */,
+				2C1A9ED920ECB7FE00E21FEA /* CKYSBCHotCourseViewController.m in Sources */,
 				2CC1D74520EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m in Sources */,
 				2CC1D74720EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m in Sources */,
 				2CC1D73C20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m in Sources */,
 				2CC1D73B20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m in Sources */,
+				2C1A9ED520ECB70800E21FEA /* CKYSBusinessCollegeFreshListViewController.m in Sources */,
 				2CC1D75B20EB1BE80088CFA4 /* CKYSBusinessCollegeTitleMoreButtonView.m in Sources */,
 				2CC1D75320EB16750088CFA4 /* CKYSBusinessCollegeExcellentCourseCell.m in Sources */,
 				2C44C8B820EC5CE500ABD85D /* UIView+Category.m in Sources */,
+				2C1A9ECF20ECB51700E21FEA /* CKYSBusinessCollegeJYTSViewController.m in Sources */,
 				2CC1D6A820EB05E10088CFA4 /* AppDelegate.m in Sources */,
+				2C1A9ED220ECB56900E21FEA /* CKYSBusinessCollegeSQGLViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

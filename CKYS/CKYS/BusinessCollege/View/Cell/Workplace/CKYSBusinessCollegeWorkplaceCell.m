@@ -2,7 +2,7 @@
 //  CKYSBusinessCollegeWorkplaceCell.m
 //  TableViewAutoHeight
 //
-//  Created by 密码：123 on 18/7/2.
+//  Created by Yan on 18/7/2.
 //  Copyright © 2018年 Yan. All rights reserved.
 //
 
@@ -14,7 +14,7 @@
 #import "CKYSBusinessCollegeWorkplaceCellDelegate.h"
 #import "CKYSBusinessCollegeTableViewCellConst.h"
 
-#import "UIView+Category.h"
+#import "UIButton+ClearColor.h"
 #import "CKYSBusinessCollegeTableViewCellConst.h"
 
 @interface CKYSBusinessCollegeWorkplaceCell ()
@@ -25,7 +25,6 @@
 @property (nonatomic, strong) NSMutableArray *dataArray;
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeWorkplaceCellDelegate> delegate;
-
 
 @end
 
@@ -83,13 +82,20 @@
         make.width.equalTo(@(SCREEN_WIDTH));
     }];
 
-    UIView *viewBottom = [UIView instanceWithRect:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT) backgroundColor:CKYS_BC_TABLE_CELL_BOTTOM_COLOR_BG parentView:self.contentView];
-    [viewBottom mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *buttonBottom = [UIButton buttonWithTargrt:self action:@selector(buttonBottomAction) forControlEvents:UIControlEventTouchUpInside];
+    [buttonBottom setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT)];
+    buttonBottom.backgroundColor = CKYS_BC_TABLE_CELL_BOTTOM_COLOR_BG;
+    [self.contentView addSubview:buttonBottom];
+    [buttonBottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_businessCollegeWorkplaceItemView.mas_bottom);
         make.left.right.equalTo(_businessCollegeWorkplaceItemView);
         make.height.equalTo(@(AdaptedHeight(CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT)));
         make.bottom.equalTo(self.contentView);
     }];
+}
+
+- (void)buttonBottomAction {
+    
 }
 
 #pragma mark - UICollectionViewDataSource

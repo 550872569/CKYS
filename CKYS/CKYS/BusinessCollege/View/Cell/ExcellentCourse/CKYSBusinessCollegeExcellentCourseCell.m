@@ -21,8 +21,9 @@
 #import "CKYSBusinessCollegeTitleMoreButtonView.h"
 #import "CKYSBusinessCollegeExcellentCourseItem.h"
 
-#import "UIView+Category.h"
 #import "CKYSBusinessCollegeTableViewCellConst.h"
+
+#import "UIButton+ClearColor.h"
 
 @interface CKYSBusinessCollegeExcellentCourseCell ()
 
@@ -60,6 +61,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self loadData];
+        [self setSelected:false animated:false];
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self initTitleAndMore];
         [self initItemView];
@@ -107,12 +109,19 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
         make.width.equalTo(@(SCREEN_WIDTH));
     }];
     
-    UIView *view = [UIView instanceWithRect:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT) backgroundColor:CKYS_BC_TABLE_CELL_BOTTOM_COLOR_BG parentView:self.contentView];
-    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+    UIButton *buttonBottom = [UIButton buttonWithTargrt:self action:@selector(buttonBottomAction) forControlEvents:UIControlEventTouchUpInside];
+    [buttonBottom setFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT)];
+    buttonBottom.backgroundColor = CKYS_BC_TABLE_CELL_BOTTOM_COLOR_BG;
+    [self.contentView addSubview:buttonBottom];
+    [buttonBottom mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_businessCollegeExcellentCourseItemView.mas_bottom).with.offset(AdaptedHeight(CKYS_BCEC_ITEM_CELL_BOTTOM_OFFSET));
         make.height.equalTo(@(AdaptedHeight(CKYS_BC_TABLE_CELL_BOTTOM_HEIGHT)));
         make.left.right.bottom.equalTo(self.contentView);
     }];
+}
+
+- (void)buttonBottomAction {
+    
 }
 
 #pragma mark - UICollectionViewDataSource

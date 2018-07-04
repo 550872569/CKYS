@@ -63,6 +63,7 @@ CGFloat CKYS_BC_CELL_TITLE_BUTTON_MORE_HEIGHT = 47;
         make.centerY.equalTo(self);
         make.right.equalTo(self.mas_right).with.offset(-11);
         make.width.equalTo(@40);
+        make.height.equalTo(self);
     }];
     UIButton *buttonClearColor = [UIButton buttonWithTargrt:self action:@selector(buttonClearColorAction:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:buttonClearColor];

@@ -2,7 +2,7 @@
 //  CKYSBusinessCollegeTableView.m
 //  TableViewAutoHeight
 //
-//  Created by 密码：123 on 18/7/2.
+//  Created by Yan on 18/7/2.
 //  Copyright © 2018年 Yan. All rights reserved.
 //
 
@@ -59,9 +59,10 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.showsHorizontalScrollIndicator = false;
     self.showsVerticalScrollIndicator = false;
+    [self setAllowsSelection:false];
 }
 
-- (void)setDelegate:(id<CKYSBusinessCollegeTableViewDelegate>)delegate {
+- (void)setBusinessCollegeDelegate:(id<CKYSBusinessCollegeTableViewDelegate>)delegate {
     _businessCollegeDelegate = delegate;
 }
 
