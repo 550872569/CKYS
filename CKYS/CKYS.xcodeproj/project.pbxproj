@@ -112,6 +112,7 @@
 		2C1A9EF820EDADDC00E21FEA /* CKYSBusinessCollegeService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeService.h; sourceTree = "<group>"; };
 		2C1A9EF920EDADDC00E21FEA /* CKYSBusinessCollegeService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeService.m; sourceTree = "<group>"; };
 		2C1A9EFC20EDB49300E21FEA /* NSLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLog.h; sourceTree = "<group>"; };
+		2C1A9F0020EE023D00E21FEA /* CKYSScreenConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSScreenConst.h; sourceTree = "<group>"; };
 		2C44C8B420EC578F00ABD85D /* CKYSBusinessCollegeTableViewCellTypeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewCellTypeConst.h; sourceTree = "<group>"; };
 		2C44C8B520EC5C5E00ABD85D /* CKYSBusinessCollegeTableViewCellConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTableViewCellConst.h; sourceTree = "<group>"; };
 		2C44C8B620EC5CE500ABD85D /* UIView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
@@ -241,6 +242,7 @@
 		2C1A9EDA20ED072C00E21FEA /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				2C1A9EFF20EE022600E21FEA /* Const */,
 				2C1A9EDB20ED079A00E21FEA /* CKYSNetworkTool.h */,
 				2C1A9EDC20ED079A00E21FEA /* CKYSNetworkTool.m */,
 				2C1A9EFB20EDB47800E21FEA /* NSLog */,
@@ -297,6 +299,14 @@
 				2CC1D75C20EB28FE0088CFA4 /* CKYSBusinessCollegeItem */,
 			);
 			path = BusinessCollege;
+			sourceTree = "<group>";
+		};
+		2C1A9EFF20EE022600E21FEA /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				2C1A9F0020EE023D00E21FEA /* CKYSScreenConst.h */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 		2C44C8B920EC5F9C00ABD85D /* Banner */ = {

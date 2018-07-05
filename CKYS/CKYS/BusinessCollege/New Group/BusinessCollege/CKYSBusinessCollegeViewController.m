@@ -25,9 +25,7 @@
 #import "CKYSBusinessCollegeService.h"
 #import "CKYSBusinessCollegeItem.h"
 
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-#define STATUS_AND_NAVIGATION_HEIGHT               ([UIScreen mainScreen].bounds.size.height>=812 ? 88 : 64)
+#import "CKYSScreenConst.h"
 
 @interface CKYSBusinessCollegeViewController ()
 
@@ -45,7 +43,7 @@
 #pragma mark - Life
 - (void)loadView {
     
-    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-STATUS_AND_NAVIGATION_HEIGHT)];
+    self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH-SCREEN_STATUS_AND_NAVIGATION_HEIGHT-SCREEN_TAB_BAR_HEIGHT)];
     [self initTitle];
     [self initTableView];
 }
@@ -85,7 +83,7 @@
 
 - (void)initTableView {
     self.view.backgroundColor =  [UIColor whiteColor];
-    _tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, SCREEN_STATUS_AND_NAVIGATION_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_STATUS_AND_NAVIGATION_HEIGHT-SCREEN_TAB_BAR_HEIGHT) style:UITableViewStylePlain];
     if (@available(iOS 11.0, *)) {//iOS 10 & 11 view.y 10 = 64 11 = 0
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
