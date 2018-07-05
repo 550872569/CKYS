@@ -46,6 +46,11 @@
 - (void)initTableView {
     self.view.backgroundColor =  [UIColor whiteColor];
     CKYSBusinessCollegeTableView *tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, VGScreenW, VGScreenH-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
+    if (@available(iOS 11.0, *)) {//iOS 10 & 11 view.y 10 = 64 11 = 0
+        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     tableView.backgroundColor = [UIColor grayColor];
     [tableView setBusinessCollegeDelegate:self];
     [self.view addSubview:tableView];

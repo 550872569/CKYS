@@ -244,6 +244,7 @@
 				2C1A9EDC20ED079A00E21FEA /* CKYSNetworkTool.m */,
 				2C1A9EDE20ED08EE00E21FEA /* CKYSBusinessCollegeNetworkTool.h */,
 				2C1A9EDF20ED08EE00E21FEA /* CKYSBusinessCollegeNetworkTool.m */,
+				2CC1D75C20EB28FE0088CFA4 /* Item */,
 			);
 			path = framework;
 			sourceTree = "<group>";
@@ -456,7 +457,6 @@
 		2CC1D74820EB0DA70088CFA4 /* BusinessCollege */ = {
 			isa = PBXGroup;
 			children = (
-				2CC1D75C20EB28FE0088CFA4 /* Item */,
 				2CC1D6DD20EB090E0088CFA4 /* ViewController */,
 				2CC1D6DE20EB09780088CFA4 /* View */,
 			);

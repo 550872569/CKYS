@@ -43,8 +43,8 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
 
 - (void)initUI {
     
+#define CKYS_BC_FT_ITEM_CELL_SHADDOW_OFFSET 2
     self.contentView.backgroundColor = [UIColor whiteColor];
-    
     
     UIView *viewBg = [[UIView alloc] init];
     [self.contentView addSubview:viewBg];
@@ -52,13 +52,14 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
     viewBg.layer.shadowColor = [UIColor colorWithRed:127.5/255.0 green:127.5/255.0 blue:127.5/255.0 alpha:1].CGColor;
     viewBg.layer.borderColor = viewBg.layer.shadowColor;
     viewBg.layer.borderWidth = 0.000001;
-    viewBg.layer.cornerRadius = 2;
+    viewBg.layer.cornerRadius = CKYS_BC_FT_ITEM_CELL_SHADDOW_OFFSET;
     viewBg.layer.shadowOpacity = 1;
-    viewBg.layer.shadowRadius = 2;
+    viewBg.layer.shadowRadius = CKYS_BC_FT_ITEM_CELL_SHADDOW_OFFSET;
     viewBg.layer.shadowOffset = CGSizeZero;
     
     [viewBg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.bottom.equalTo(self.contentView);
+        make.left.right.bottom.equalTo(self.contentView);
+        make.top.equalTo(self.contentView.mas_top).with.offset(CKYS_BC_FT_ITEM_CELL_SHADDOW_OFFSET);
     }];
     
     _imageView = [[UIImageView alloc] init];
