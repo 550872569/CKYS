@@ -12,6 +12,7 @@
 #import "Masonry.h"
 
 #import "CKYSBusinessCollegeBannerCellDelegate.h"
+#import "CKYSBusinessCollegeBannerItem.h"
 
 @interface CKYSBusinessCollegeBannerCell () <SDCycleScrollViewDelegate>
 
@@ -87,5 +88,12 @@
     }
 }
 
+- (void)setBannerItems:(NSArray <CKYSBusinessCollegeBannerItem *> *)bannerItems {
+    __block NSMutableArray *arratUrl = [NSMutableArray arrayWithCapacity:bannerItems.count];
+    [bannerItems enumerateObjectsUsingBlock:^(CKYSBusinessCollegeBannerItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [arratUrl addObject:obj.url];
+    }];
+    _bannerView.imageURLStringsGroup = arratUrl.copy;
+}
 
 @end

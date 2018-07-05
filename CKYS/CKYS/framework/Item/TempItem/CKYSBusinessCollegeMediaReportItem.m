@@ -10,4 +10,28 @@
 
 @implementation CKYSBusinessCollegeMediaReportItem
 
+- (id)copyWithZone:(nullable NSZone *)zone {
+    CKYSBusinessCollegeMediaReportItem *itemCopy = [[[self class] allocWithZone:zone] init];
+    itemCopy->_id = _id.copy;
+    itemCopy->_info = _info.copy;
+    itemCopy->_path = _path.copy;
+    itemCopy->_title = _title.copy;
+    itemCopy->_typecode = _typecode.copy;
+    itemCopy->_url = _url.copy;
+    itemCopy->_urlshare = _urlshare.copy;
+    return itemCopy;
+}
+
+- (id)mutableCopyWithZone:(nullable NSZone *)zone {
+    CKYSBusinessCollegeMediaReportItem *itemMutableCopy = [[[self class] allocWithZone:zone] init];
+    itemMutableCopy->_id = _id.mutableCopy;
+    itemMutableCopy->_info = _info.mutableCopy;
+    itemMutableCopy->_path = _path.mutableCopy;
+    itemMutableCopy->_title = _title.mutableCopy;
+    itemMutableCopy->_typecode = _typecode.mutableCopy;
+    itemMutableCopy->_url = _url.mutableCopy;
+    itemMutableCopy->_urlshare = _urlshare.mutableCopy;
+    return itemMutableCopy;
+}
+
 @end

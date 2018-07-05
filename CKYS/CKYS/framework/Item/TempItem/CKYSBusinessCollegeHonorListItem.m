@@ -10,4 +10,16 @@
 
 @implementation CKYSBusinessCollegeHonorListItem
 
+- (id)copyWithZone:(nullable NSZone *)zone {
+    CKYSBusinessCollegeHonorListItem *itemCopy = [[[self class] allocWithZone:zone] init];
+    itemCopy->_path = _path.copy;
+    return itemCopy;
+}
+
+- (id)mutableCopyWithZone:(nullable NSZone *)zone {
+    CKYSBusinessCollegeHonorListItem *itemMutableCopy = [[[self class] allocWithZone:zone] init];
+    itemMutableCopy->_path = _path.mutableCopy;
+    return itemMutableCopy;
+}
+
 @end

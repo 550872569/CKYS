@@ -10,10 +10,14 @@
 
 #import "CKYSBusinessCollegeTableViewCellTypeConst.h"
 
+@class CKYSBusinessCollegeItem;
+
 @protocol CKYSBusinessCollegeTableViewDelegate;
 
 @interface CKYSBusinessCollegeTableView : UITableView
 
 - (void)setBusinessCollegeDelegate:(id<CKYSBusinessCollegeTableViewDelegate>)delegate;
+
+- (void)setBusinessCollegeItem:(CKYSBusinessCollegeItem *)businessCollegeItem;
 
 @end

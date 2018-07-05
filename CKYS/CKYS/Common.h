@@ -574,5 +574,6 @@
 #define debugMethod()
 
 
+#import "NSLog.h"
 
 #endif /* Common_h */

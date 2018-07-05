@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CKYSBusinessCollegeMediaReportItem : NSObject
+@interface CKYSBusinessCollegeMediaReportItem : NSObject <NSCopying, NSMutableCopying>
 
 @property (nonatomic, copy) NSString *id;
 @property (nonatomic, copy) NSString *info;

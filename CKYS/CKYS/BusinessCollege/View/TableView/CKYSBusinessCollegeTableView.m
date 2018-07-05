@@ -25,6 +25,8 @@
 #import "CKYSBusinessCollegeBannerCellDelegate.h"
 #import "CKYSBusinessCollegeTableViewDelegate.h"
 
+#import "CKYSBusinessCollegeItem.h"
+
 @interface CKYSBusinessCollegeTableView ()
 
 <UITableViewDataSource,
@@ -40,6 +42,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @implementation CKYSBusinessCollegeTableView {
     __weak id<CKYSBusinessCollegeTableViewDelegate> _businessCollegeDelegate;
+    CKYSBusinessCollegeItem *_businessCollegeItem;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
@@ -77,6 +80,9 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     
     if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeBanner) {
         CKYSBusinessCollegeBannerCell *cell = [CKYSBusinessCollegeBannerCell cellWithTableView:tableView];
+        if (_businessCollegeItem.isRequestCompleteHandleSuccess) {
+            [cell setBannerItems:_businessCollegeItem.banners];
+        }
         [cell setDelegate:(id)self];
         return cell;
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeWorkplace) {
@@ -158,6 +164,13 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     }
     if (_businessCollegeDelegate && [_businessCollegeDelegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
         [_businessCollegeDelegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:type moreAction:sender];
+    }
+}
+
+- (void)setBusinessCollegeItem:(CKYSBusinessCollegeItem *)businessCollegeItem {
+    _businessCollegeItem = businessCollegeItem.mutableCopy;
+    if (_businessCollegeItem.isRequestCompleteHandleSuccess) {
+        [self reloadData];
     }
 }
 

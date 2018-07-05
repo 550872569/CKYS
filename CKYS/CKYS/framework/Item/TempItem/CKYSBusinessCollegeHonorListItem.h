@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CKYSBusinessCollegeHonorListItem : NSObject
+@interface CKYSBusinessCollegeHonorListItem : NSObject <NSCopying, NSMutableCopying>
 
 @property (nonatomic, copy) NSString *path;
 

@@ -15,7 +15,8 @@
 
 @class CKYSBusinessCollegeBannerItem, CKYSBusinessCollegeHonorListItem, CKYSBusinessCollegeMediaReportItem, CKYSBusinessCollegeTopnewsItem;
 
-@interface CKYSBusinessCollegeItem : NSObject
+@interface CKYSBusinessCollegeItem : NSObject <NSCopying,
+NSMutableCopying>
 
 @property (nonatomic, copy) NSString *applyurl;
 @property (nonatomic, copy) NSString *ckcxyurl;
@@ -44,5 +45,7 @@
 @property (nonatomic, copy) NSArray <CKYSBusinessCollegeTopnewsItem *>*topnews;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *upgradeurl;
+
+- (BOOL)isRequestCompleteHandleSuccess;
 
 @end

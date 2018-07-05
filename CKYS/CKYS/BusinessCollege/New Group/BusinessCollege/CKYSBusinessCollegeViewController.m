@@ -22,6 +22,9 @@
 #import "CKYSBusinessCollegeFreshListViewController.h"
 #import "CKYSBCHotCourseViewController.h"
 
+#import "CKYSBusinessCollegeService.h"
+#import "CKYSBusinessCollegeItem.h"
+
 #define VGScreenW [UIScreen mainScreen].bounds.size.width
 #define VGScreenH [UIScreen mainScreen].bounds.size.height
 #define STATUS_AND_NAVIGATION_HEIGHT               ([UIScreen mainScreen].bounds.size.height>=812 ? 88 : 64)
@@ -30,10 +33,16 @@
 
 <CKYSBusinessCollegeTableViewDelegate>
 
+@property (nonatomic, strong) CKYSBusinessCollegeTableView *tableView;
+/** 服务端返回的数据模型 */
+@property (nonatomic, strong) CKYSBusinessCollegeItem *businessCollegeItem;
+
 @end
 
 @implementation CKYSBusinessCollegeViewController
 
+
+#pragma mark - Life
 - (void)loadView {
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-STATUS_AND_NAVIGATION_HEIGHT)];
     [self initTableView];
@@ -41,19 +50,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadBusinessCollegeDataOnceOf];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
+#pragma mark - UI
 
 - (void)initTableView {
     self.view.backgroundColor =  [UIColor whiteColor];
-    CKYSBusinessCollegeTableView *tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, VGScreenW, VGScreenH-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, VGScreenW, VGScreenH-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
     if (@available(iOS 11.0, *)) {//iOS 10 & 11 view.y 10 = 64 11 = 0
-        tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    tableView.backgroundColor = [UIColor grayColor];
-    [tableView setBusinessCollegeDelegate:self];
-    [self.view addSubview:tableView];
+    _tableView.backgroundColor = [UIColor grayColor];
+    [_tableView setBusinessCollegeDelegate:self];
+    [self.view addSubview:_tableView];
 }
 
 #pragma mark - CKYSBusinessCollegeTableViewDelegate
@@ -96,7 +124,6 @@
 
 #pragma mark 更多按钮
 - (void)CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:(CKYSBusinessCollegeTableViewCellType)cellType moreAction:(UIButton *)sender {
-    NSLog(@"cellType%ld",cellType);
     if (cellType==CKYSBusinessCollegeTableViewCellTypefFamousTeachers) {
         [self pushToTeacherListViewController];
     } else if (cellType==CKYSBusinessCollegeTableViewCellTypeExcellentCourse) {
@@ -107,29 +134,44 @@
 }
 
 #pragma mark -  private
-/** 职场 & 更多 */
+/** 精品课程 & 更多 */
 - (void)pushToCourseListViewController {
-    [self.navigationController pushViewController:[[CKYSBCExcellentCourseViewController alloc] init] animated:true];
+    [self pushToObjViewController:[[CKYSBCExcellentCourseViewController alloc] init]];
 }
 
 /** 课程详情 */
 - (void)pushToCourseDetailViewController {
-    [self.navigationController pushViewController:[[CKYSBCCourseDetailViewController alloc] init] animated:true];
+    [self pushToObjViewController:[[CKYSBCCourseDetailViewController alloc] init]];
 }
 
 /** 讲师大本营 */
 - (void)pushToTeacherListViewController {
-    [self.navigationController pushViewController:[[CKYSBCTeacherListViewController alloc] init] animated:true];
+    [self pushToObjViewController:[[CKYSBCTeacherListViewController alloc] init]];
 }
 
 /** 讲师主页 */
 - (void)pushToTeacherDetailViewController {
-    [self.navigationController pushViewController:[[CKYSBCTeacherDetailViewController alloc] init] animated:true];
+    [self pushToObjViewController:[[CKYSBCTeacherDetailViewController alloc] init]];
 }
 
 /** 职场vc */
 - (void)pushToObjViewController:(UIViewController *)objViewController {
     [self.navigationController pushViewController:objViewController animated:true];
+}
+
+#pragma mark - Data
+
+- (void)loadBusinessCollegeDataOnceOf {
+    __typeof(self)weakSelf = self;
+    [CKYSBusinessCollegeService postBusinessCollegeServiceSuccess:^(CKYSBusinessCollegeItem *businessCollegeItem) {
+        NSLog(@"item%@",businessCollegeItem);
+        _businessCollegeItem = businessCollegeItem.copy;
+        _businessCollegeItem = businessCollegeItem.mutableCopy;
+//        weakSelf.tableView
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 
 @end

@@ -10,10 +10,14 @@
 
 @protocol CKYSBusinessCollegeBannerCellDelegate;
 
+@class CKYSBusinessCollegeBannerItem;
+
 @interface CKYSBusinessCollegeBannerCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 - (void)setDelegate:(id<CKYSBusinessCollegeBannerCellDelegate>)delegate;
+
+- (void)setBannerItems:(NSArray <CKYSBusinessCollegeBannerItem *>*)bannerItems;
 
 @end
