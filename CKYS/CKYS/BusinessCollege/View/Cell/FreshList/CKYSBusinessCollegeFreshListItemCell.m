@@ -49,7 +49,7 @@ CGFloat CKYS_BCFL_ITEM_CELL_MARGIN_CLUME = 10;
 }
 
 - (void)initUI{
-    self.contentView.backgroundColor = [UIColor lightGrayColor];
+    self.contentView.backgroundColor = [UIColor colorWithRed:241/255.0 green:241/255.0 blue:241/255.0 alpha:1];
     _imageView = [[UIImageView alloc] init];
     [self.contentView addSubview:_imageView];
     [_imageView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -25,8 +25,8 @@
 #import "CKYSBusinessCollegeService.h"
 #import "CKYSBusinessCollegeItem.h"
 
-#define VGScreenW [UIScreen mainScreen].bounds.size.width
-#define VGScreenH [UIScreen mainScreen].bounds.size.height
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 #define STATUS_AND_NAVIGATION_HEIGHT               ([UIScreen mainScreen].bounds.size.height>=812 ? 88 : 64)
 
 @interface CKYSBusinessCollegeViewController ()
@@ -44,7 +44,9 @@
 
 #pragma mark - Life
 - (void)loadView {
+    
     self.view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height-STATUS_AND_NAVIGATION_HEIGHT)];
+    [self initTitle];
     [self initTableView];
 }
 
@@ -71,9 +73,19 @@
 
 #pragma mark - UI
 
+- (void)initTitle {
+    NSString *title = @"商学院";
+    CGSize titleSize = [title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18]}];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - titleSize.width)/ 2, (SCREEN_HEIGHT - titleSize.height) / 2, titleSize.width, titleSize.height)];
+    titleLabel.text = title;
+    titleLabel.textColor = [UIColor colorWithRed:50.9796/255.0 green:50.9796/255.0 blue:50.9796/255.0 alpha:1];
+    titleLabel.font = [UIFont systemFontOfSize:18];
+    self.navigationItem.titleView = titleLabel;
+}
+
 - (void)initTableView {
     self.view.backgroundColor =  [UIColor whiteColor];
-    _tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, VGScreenW, VGScreenH-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[CKYSBusinessCollegeTableView alloc] initWithFrame:CGRectMake(0, STATUS_AND_NAVIGATION_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-STATUS_AND_NAVIGATION_HEIGHT) style:UITableViewStylePlain];
     if (@available(iOS 11.0, *)) {//iOS 10 & 11 view.y 10 = 64 11 = 0
         _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {

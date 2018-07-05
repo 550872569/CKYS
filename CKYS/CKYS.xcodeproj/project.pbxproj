@@ -241,12 +241,10 @@
 		2C1A9EDA20ED072C00E21FEA /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				2C1A9EFB20EDB47800E21FEA /* NSLog */,
 				2C1A9EDB20ED079A00E21FEA /* CKYSNetworkTool.h */,
 				2C1A9EDC20ED079A00E21FEA /* CKYSNetworkTool.m */,
-				2C1A9EF820EDADDC00E21FEA /* CKYSBusinessCollegeService.h */,
-				2C1A9EF920EDADDC00E21FEA /* CKYSBusinessCollegeService.m */,
-				2CC1D75C20EB28FE0088CFA4 /* Item */,
+				2C1A9EFB20EDB47800E21FEA /* NSLog */,
+				2C1A9EFE20EDFE5A00E21FEA /* BusinessCollege */,
 			);
 			path = framework;
 			sourceTree = "<group>";
@@ -281,6 +279,24 @@
 				2C1A9EFC20EDB49300E21FEA /* NSLog.h */,
 			);
 			path = NSLog;
+			sourceTree = "<group>";
+		};
+		2C1A9EFD20EDFB9C00E21FEA /* CKYSBusinessCollegeService */ = {
+			isa = PBXGroup;
+			children = (
+				2C1A9EF820EDADDC00E21FEA /* CKYSBusinessCollegeService.h */,
+				2C1A9EF920EDADDC00E21FEA /* CKYSBusinessCollegeService.m */,
+			);
+			path = CKYSBusinessCollegeService;
+			sourceTree = "<group>";
+		};
+		2C1A9EFE20EDFE5A00E21FEA /* BusinessCollege */ = {
+			isa = PBXGroup;
+			children = (
+				2C1A9EFD20EDFB9C00E21FEA /* CKYSBusinessCollegeService */,
+				2CC1D75C20EB28FE0088CFA4 /* CKYSBusinessCollegeItem */,
+			);
+			path = BusinessCollege;
 			sourceTree = "<group>";
 		};
 		2C44C8B920EC5F9C00ABD85D /* Banner */ = {
@@ -538,7 +554,7 @@
 			path = TitleMoreButton;
 			sourceTree = "<group>";
 		};
-		2CC1D75C20EB28FE0088CFA4 /* Item */ = {
+		2CC1D75C20EB28FE0088CFA4 /* CKYSBusinessCollegeItem */ = {
 			isa = PBXGroup;
 			children = (
 				2C1A9EE420ED12AB00E21FEA /* TempItem */,
@@ -548,7 +564,7 @@
 				2CC1D76020EB29850088CFA4 /* ExcellentCourse */,
 				2CC1D76C20EB4ADD0088CFA4 /* FamousTeacher */,
 			);
-			path = Item;
+			path = CKYSBusinessCollegeItem;
 			sourceTree = "<group>";
 		};
 		2CC1D75D20EB293B0088CFA4 /* Workplace */ = {
