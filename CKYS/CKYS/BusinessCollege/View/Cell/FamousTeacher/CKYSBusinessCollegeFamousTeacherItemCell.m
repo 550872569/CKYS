@@ -12,8 +12,11 @@
 #import "Masonry.h"
 
 #import "UILabel+Category.h"
+#import "CKYSBusinessCollegeHonorListItem.h"
 
 #import "CKYSBusinessCollegeFamousTeacherItem.h"
+#import "CKYSBusinessCollegeHonorListItem.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 CGFloat CKYS_BCFT_ITEM_CELL_MARGIN = 10;
 
@@ -95,11 +98,14 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
     }];
 }
 
-- (void)setItem:(CKYSBusinessCollegeFamousTeacherItem *)item {
-    
-    [_labelTitle setText:[NSString stringWithFormat:@"%@",item.title]];
-    [_labelSubTitle setText:[NSString stringWithFormat:@"%@",item.subTitle]];
-    [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",item.image]]];
+- (void)setFamousTeacherItem:(CKYSBusinessCollegeFamousTeacherItem *)famousTeacherItem {
+    [_labelTitle setText:[NSString stringWithFormat:@"%@",famousTeacherItem.title]];
+    [_labelSubTitle setText:[NSString stringWithFormat:@"%@",famousTeacherItem.subTitle]];
+    [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",famousTeacherItem.image]]];
+}
+
+- (void)setHonorListItem:(CKYSBusinessCollegeHonorListItem *)item {
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",item.path]] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@""]]];
 }
 
 @end

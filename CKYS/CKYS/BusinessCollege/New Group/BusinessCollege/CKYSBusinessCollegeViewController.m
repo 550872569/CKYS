@@ -164,10 +164,9 @@
 - (void)loadBusinessCollegeDataOnceOf {
     __typeof(self)weakSelf = self;
     [CKYSBusinessCollegeService postBusinessCollegeServiceSuccess:^(CKYSBusinessCollegeItem *businessCollegeItem) {
-        NSLog(@"item%@",businessCollegeItem);
-        _businessCollegeItem = businessCollegeItem.copy;
+        
         _businessCollegeItem = businessCollegeItem.mutableCopy;
-//        weakSelf.tableView
+        [weakSelf.tableView setBusinessCollegeItem:_businessCollegeItem];
         
     } failure:^(NSError *error) {
         

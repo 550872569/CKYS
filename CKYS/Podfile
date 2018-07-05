@@ -17,4 +17,7 @@ pod 'MJExtension', '~> 3.0.13'
 
 pod 'YYModel'
 
+pod 'SDWebImage'
+
+
 end

@@ -10,6 +10,8 @@
 
 @protocol CKYSBusinessCollegeFreshListCellDelegate;
 
+@class CKYSBusinessCollegeTopnewsItem;
+
 /*
  新鲜出炉cell
  */
@@ -18,5 +20,7 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 - (void)setDelegate:(id<CKYSBusinessCollegeFreshListCellDelegate>)delegate;
+
+- (void)setTopNews:(NSArray <CKYSBusinessCollegeTopnewsItem *>*)topNews;
 
 @end

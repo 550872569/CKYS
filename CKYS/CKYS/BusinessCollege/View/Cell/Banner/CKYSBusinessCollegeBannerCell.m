@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) SDCycleScrollView *bannerView;
 
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray <CKYSBusinessCollegeBannerItem *>*dataArray;
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeBannerCellDelegate> delegate;
 
@@ -50,7 +50,7 @@
     _bannerView.backgroundColor = [UIColor whiteColor];
     _bannerView.currentPageDotColor = [UIColor redColor];
     _bannerView.pageDotColor = [UIColor lightGrayColor];
-    _bannerView.imageURLStringsGroup = nil;
+    _bannerView.imageURLStringsGroup = _dataArray;
     _bannerView.currentPageDotColor = [UIColor whiteColor];
     _bannerView.pageDotColor = [UIColor colorWithRed:197/255.0 green:197/255.0 blue:206/255.0 alpha:1];
     _bannerView.pageControlDotSize = CGSizeMake(AdaptedHeight(8), AdaptedHeight(8));
@@ -89,11 +89,16 @@
 }
 
 - (void)setBannerItems:(NSArray <CKYSBusinessCollegeBannerItem *> *)bannerItems {
-    __block NSMutableArray *arratUrl = [NSMutableArray arrayWithCapacity:bannerItems.count];
+    _dataArray = [NSMutableArray arrayWithCapacity:bannerItems.count];
+#warning todo...
     [bannerItems enumerateObjectsUsingBlock:^(CKYSBusinessCollegeBannerItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [arratUrl addObject:obj.url];
+        [_dataArray addObject:obj.path];
+        [_dataArray addObject:obj.path];
+        [_dataArray addObject:obj.path];
+        [_dataArray addObject:obj.path];
     }];
-    _bannerView.imageURLStringsGroup = arratUrl.copy;
+    _bannerView.imageURLStringsGroup = _dataArray;
+    [_bannerView setNeedsDisplay];
 }
 
 @end

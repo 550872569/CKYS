@@ -21,11 +21,14 @@ extern CGFloat CKYS_BCFL_ITEM_CELL_MARGIN_BOTTOM;
 extern CGFloat CKYS_BCFL_ITEM_CELL_MARGIN_ROW;
 extern CGFloat CKYS_BCFL_ITEM_CELL_MARGIN_CLUME;
 
-@class CKYSBusinessCollegeFreshListItem;
+@class CKYSBusinessCollegeFreshListItem, CKYSBusinessCollegeTopnewsItem;
 
 /*  新鲜出炉cell中的collectionCell */
 @interface CKYSBusinessCollegeFreshListItemCell : UICollectionViewCell
 
 - (void)setItem:(CKYSBusinessCollegeFreshListItem *)item;
 
+- (void)setTopnewsItem:(CKYSBusinessCollegeTopnewsItem *)topnewsItem;
+
 @end
+

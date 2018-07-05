@@ -10,6 +10,8 @@
 
 #import "CKYSBusinessCollegeTitleMoreButtonViewDelegate.h"
 
+@class CKYSBusinessCollegeHonorListItem;
+
 @protocol CKYSBusinessCollegeFamousTeacherCellDelegate;
 
 /** 名师推荐cell */
@@ -18,5 +20,7 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 
 - (void)setDelegate:(id<CKYSBusinessCollegeFamousTeacherCellDelegate>)delegate;
+
+- (void)setFamousTeacherItems:(NSArray <CKYSBusinessCollegeHonorListItem *>*)famousTeacherItems;
 
 @end

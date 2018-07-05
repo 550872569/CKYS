@@ -24,6 +24,7 @@
 #import "CKYSBusinessCollegeTableViewCellConst.h"
 
 #import "UIButton+ClearColor.h"
+#import "CKYSBusinessCollegeMediaReportItem.h"
 
 @interface CKYSBusinessCollegeExcellentCourseCell ()
 
@@ -34,7 +35,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *businessCollegeExcellentCourseItemView;
 
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray <CKYSBusinessCollegeMediaReportItem *>*dataArray;
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeExcellentCourseCellDelegate> delegate;
 
@@ -72,7 +73,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (void)loadData {
     if (!_dataArray) {
         _dataArray = [NSMutableArray arrayWithCapacity:8];
-        [_dataArray addObjectsFromArray:[CKYSBusinessCollegeExcellentCourseModel businessCollegeExcellentCourseItemList]];
+//        [_dataArray addObjectsFromArray:[CKYSBusinessCollegeExcellentCourseModel businessCollegeExcellentCourseItemList]];
     }
 }
 - (void)initTitleAndMore {//height 47
@@ -131,14 +132,17 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     if (self.dataArray.count == 0) {
         return 1;
     } else {
-        return 8;
+        return _dataArray.count;
     }
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CKYSBusinessCollegeExcellentCourseItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CKYSBusinessCollegeExcellentCourseItemCell" forIndexPath:indexPath];
-    [cell setItem:_dataArray[indexPath.row]];
+//    [cell setItem:_dataArray[indexPath.row]];
+    if (_dataArray.count && _dataArray.count>indexPath.row) {
+        [cell setMediaReportItem:_dataArray[indexPath.row]];
+    }
     return cell;
 }
 
@@ -184,6 +188,14 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
         [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:CKYSBusinessCollegeTableViewCellTypeExcellentCourse moreAction:sender];
     }
+}
+
+- (void)setMediaReportItems:(NSArray <CKYSBusinessCollegeMediaReportItem *>*)ediaReportItems {
+    _dataArray = [NSMutableArray arrayWithCapacity:8];
+    [_dataArray addObjectsFromArray:ediaReportItems];
+    [_dataArray addObjectsFromArray:ediaReportItems];
+    [_dataArray addObjectsFromArray:ediaReportItems];
+    [_businessCollegeExcellentCourseItemView reloadData];
 }
 
 @end

@@ -92,17 +92,26 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeFreshList) {
         
         CKYSBusinessCollegeFreshListCell *cell = [CKYSBusinessCollegeFreshListCell cellWithTableView:tableView];
+        if (_businessCollegeItem.isRequestCompleteHandleSuccess) {
+            [cell setTopNews:_businessCollegeItem.topnews];
+        }
         [cell setDelegate:(id)self];
         return cell;
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypeExcellentCourse) {
         
         CKYSBusinessCollegeExcellentCourseCell *cell = [CKYSBusinessCollegeExcellentCourseCell cellWithTableView:tableView];
+        if (_businessCollegeItem.isRequestCompleteHandleSuccess) {
+            [cell setMediaReportItems:_businessCollegeItem.mediareport];
+        }
         [cell setDelegate:(id)self];
         return cell;
     } else if (indexPath.row==CKYSBusinessCollegeTableViewCellTypefFamousTeachers) {
         
         CKYSBusinessCollegeFamousTeacherCell *cell = [CKYSBusinessCollegeFamousTeacherCell cellWithTableView:tableView];
         [cell setDelegate:(id)self];
+        if (_businessCollegeItem.isRequestCompleteHandleSuccess) {
+            [cell setFamousTeacherItems:_businessCollegeItem.honor_list];
+        }
         return cell;
     } else {
         return nil;

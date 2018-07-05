@@ -12,6 +12,9 @@
 #import "Masonry.h"
 #import "UILabel+Category.h"
 #import "CKYSBusinessCollegeFreshListItem.h"
+#import "CKYSBusinessCollegeTopnewsItem.h"
+
+#import <SDWebImage/UIImageView+WebCache.h>
 
 CGFloat CKYS_BCFL_ITEM_CELL_IMAGE_HEIGHT = 171;
 CGFloat CKYS_BCFL_ITEM_CELL_IMAGE_WIDTH = 275;
@@ -59,6 +62,7 @@ CGFloat CKYS_BCFL_ITEM_CELL_MARGIN_CLUME = 10;
     [self.contentView addSubview:_labelTitle];
     [_labelTitle mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(_imageView);
+        make.width.equalTo(@(AdaptedHeight(CKYS_BCFL_ITEM_CELL_IMAGE_WIDTH-CKYS_BCFL_ITEM_CELL_MARGIN_LEFT-CKYS_BCFL_ITEM_CELL_MARGIN_RIGHT)));
         make.top.equalTo(_imageView.mas_bottom).with.offset(AdaptedHeight(9));
         make.bottom.equalTo(self.contentView.mas_bottom).with.offset(-AdaptedHeight(15));
     }];
@@ -67,6 +71,11 @@ CGFloat CKYS_BCFL_ITEM_CELL_MARGIN_CLUME = 10;
 - (void)setItem:(CKYSBusinessCollegeFreshListItem *)item {
     _imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",item.image]];
     _labelTitle.text = [NSString stringWithFormat:@"%@",item.title];
+}
+
+- (void)setTopnewsItem:(CKYSBusinessCollegeTopnewsItem *)topnewsItem {
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",topnewsItem.url]] placeholderImage:nil];
+    _labelTitle.text = [NSString stringWithFormat:@"%@",topnewsItem.title];
 }
 
 @end

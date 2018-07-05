@@ -20,6 +20,8 @@
 
 #import "CKYSBusinessCollegeTitleMoreButtonView.h"
 
+#import "CKYSBusinessCollegeTopnewsItem.h"
+
 @interface CKYSBusinessCollegeFreshListCell ()
 
 <UICollectionViewDelegate,
@@ -29,7 +31,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *businessCollegeFreshListItemView;
 
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray <CKYSBusinessCollegeTopnewsItem *>*dataArray;
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeFreshListCellDelegate> delegate;
 
@@ -55,7 +57,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self initData];
+//        [self initData];
         self.contentView.backgroundColor = [UIColor whiteColor];
         [self initTitleAndMore];
         [self initItemView];
@@ -106,14 +108,17 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     if (self.dataArray.count == 0) {
         return 1;
     } else {
-        return self.dataArray.count;
+        return self.dataArray.count>8? 8 : self.dataArray.count;
     }
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CKYSBusinessCollegeFreshListItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CKYSBusinessCollegeFreshListItemCell" forIndexPath:indexPath];
-    [cell setItem:self.dataArray[indexPath.row]];
+//    [cell setItem:self.dataArray[indexPath.row]];
+    if (_dataArray.count && _dataArray.count>indexPath.row) {
+        [cell setTopnewsItem:self.dataArray[indexPath.row]];
+    }
     return cell;
 }
 
@@ -159,6 +164,14 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
         [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:CKYSBusinessCollegeTableViewCellTypeFreshList moreAction:sender];
     }
+}
+
+- (void)setTopNews:(NSArray <CKYSBusinessCollegeTopnewsItem *>*)topNews {
+    _dataArray = [NSMutableArray arrayWithCapacity:8];
+    [topNews enumerateObjectsUsingBlock:^(CKYSBusinessCollegeTopnewsItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_dataArray addObject:obj];
+    }];
+    [_businessCollegeFreshListItemView reloadData];
 }
 
 @end

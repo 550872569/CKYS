@@ -19,7 +19,7 @@
 #import "UIButton+ImageTitleSpacing.h"
 
 #import "CKYSBusinessCollegeTitleMoreButtonView.h"
-#import "CKYSBusinessCollegeFamousTeacherItem.h"
+#import "CKYSBusinessCollegeHonorListItem.h"
 
 @interface CKYSBusinessCollegeFamousTeacherCell ()
 
@@ -30,7 +30,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 
 @property (nonatomic, strong) UICollectionView *businessCollegeFamousTeacherItemView;
 
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, strong) NSMutableArray <CKYSBusinessCollegeHonorListItem *>*dataArray;
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeFamousTeacherCellDelegate> delegate;
 
@@ -69,9 +69,10 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (void)loadData {
     if (!_dataArray) {
         _dataArray = [NSMutableArray arrayWithCapacity:8];
-        [_dataArray addObjectsFromArray:[CKYSBusinessCollegeFamousTeacherModel businessCollegeFamousTeacherItemList]];
+//        [_dataArray addObjectsFromArray:[CKYSBusinessCollegeFamousTeacherModel businessCollegeFamousTeacherItemList]];
     }
 }
+
 - (void)initTitleAndMore {//height 47
     _titleMoreButtonView = [[CKYSBusinessCollegeTitleMoreButtonView alloc] initWithDelegate:self];
     [self.contentView addSubview:_titleMoreButtonView];
@@ -122,7 +123,10 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     CKYSBusinessCollegeFamousTeacherItemCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CKYSBusinessCollegeFamousTeacherItemCell" forIndexPath:indexPath];
-    [cell setItem:_dataArray[indexPath.row]];
+//    [cell setItem:_dataArray[indexPath.row]];
+    if (_dataArray.count && _dataArray.count>indexPath.row) {
+        [cell setHonorListItem:_dataArray[indexPath.row]];
+    }
     return cell;
 }
 
@@ -168,6 +172,10 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     if (_delegate && [_delegate respondsToSelector:@selector(CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:moreAction:)]) {
         [_delegate CKYSBusinessCollegeCellTitleMoreButtonViewDelegate:CKYSBusinessCollegeTableViewCellTypefFamousTeachers moreAction:sender];
     }
+}
+
+- (void)setFamousTeacherItems:(NSArray <CKYSBusinessCollegeHonorListItem *>*)famousTeacherItems {
+    _dataArray = [NSMutableArray arrayWithArray:famousTeacherItems];
 }
 
 @end

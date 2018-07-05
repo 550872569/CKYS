@@ -14,6 +14,8 @@
 #import "UILabel+Category.h"
 
 #import "CKYSBusinessCollegeExcellentCourseItem.h"
+#import "CKYSBusinessCollegeMediaReportItem.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 CGFloat CKYS_BCEC_ITEM_CELL_HEIGHT = 115;
 
@@ -60,6 +62,11 @@ CGFloat CKYS_BCEC_ITEM_CELL_BOTTOM_OFFSET = 15;
 - (void)setItem:(CKYSBusinessCollegeExcellentCourseItem *)item {
     [_labelTitle setText:[NSString stringWithFormat:@"%@",item.title]];
     [_imageView setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",item.image]]];
+}
+
+- (void)setMediaReportItem:(CKYSBusinessCollegeMediaReportItem *)ediaReportItem {
+    [_labelTitle setText:[NSString stringWithFormat:@"%@",ediaReportItem.title]];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",ediaReportItem.path]] placeholderImage:nil];
 }
 
 @end

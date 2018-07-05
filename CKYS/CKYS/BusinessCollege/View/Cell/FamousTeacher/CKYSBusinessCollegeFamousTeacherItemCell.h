@@ -15,11 +15,14 @@ extern CGFloat CKYS_BCFT_ITEM_CELL_MARGIN;
 
 extern CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET;
 
-@class CKYSBusinessCollegeFamousTeacherItem;
+@class CKYSBusinessCollegeFamousTeacherItem, CKYSBusinessCollegeHonorListItem;
 
 /** 名师推荐Item Cell */
 @interface CKYSBusinessCollegeFamousTeacherItemCell : UICollectionViewCell
 
-- (void)setItem:(CKYSBusinessCollegeFamousTeacherItem *)item;
+- (void)setFamousTeacherItem:(CKYSBusinessCollegeFamousTeacherItem *)famousTeacherItem;
+
+#warning debug data
+- (void)setHonorListItem:(CKYSBusinessCollegeHonorListItem *)item;
 
 @end
