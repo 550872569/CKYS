@@ -105,7 +105,9 @@ CGFloat CKYS_BCFT_ITEM_CELL_BOTTOM_OFFSET = 18;
 }
 
 - (void)setHonorListItem:(CKYSBusinessCollegeHonorListItem *)item {
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",item.path]] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@""]]];
+    [_imageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",item.path]] placeholderImage:[UIImage imageNamed:[NSString stringWithFormat:@""]] options:SDWebImageQueryDiskSync completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        
+    }];
 }
 
 @end

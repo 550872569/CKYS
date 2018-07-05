@@ -8,7 +8,6 @@
 
 #import "CKYSBusinessCollegeCache.h"
 #import "CKYSBusinessCollegeItem.h"
-#import "CKYSFileUtils.h"
 #import "MJExtension.h"
 
 @implementation CKYSBusinessCollegeCache {
@@ -16,15 +15,13 @@
     NSString *_filePath;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _fileName = @"ckysBusinessCollegeCache";
         NSString *businessCollegeCachePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         businessCollegeCachePath = [businessCollegeCachePath stringByAppendingPathComponent:_fileName];
         _filePath = businessCollegeCachePath.copy;
-        [CKYSFileUtils createFileAtPath:_filePath];
     }
     return self;
 }
@@ -32,16 +29,15 @@
 - (BOOL)saveBusinessCollegeData:(CKYSBusinessCollegeItem *)businessCollegeItem {
     
     NSMutableDictionary *dict = [businessCollegeItem mj_keyValues];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dict];
-    [CKYSFileUtils writeData:data toFileAtPath:_filePath];
-    
+    [[NSUserDefaults standardUserDefaults] setValue:dict forKey:_fileName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     return true;
 }
 
 - (CKYSBusinessCollegeItem *)readBusinessCollegeData {
-    NSData *data =  [CKYSFileUtils readFileAtPath:_filePath];
-    
-    return nil;
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:_fileName];
+    CKYSBusinessCollegeItem *item = [CKYSBusinessCollegeItem mj_objectWithKeyValues:dict];
+    return item;
 }
 
 @end

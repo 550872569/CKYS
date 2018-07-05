@@ -52,6 +52,8 @@
 		2CC1D76A20EB47A60088CFA4 /* CKYSBusinessCollegeFamousTeacherItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D76920EB47A60088CFA4 /* CKYSBusinessCollegeFamousTeacherItemCell.m */; };
 		2CC1D76F20EB4B090088CFA4 /* CKYSBusinessCollegeFamousTeacherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D76E20EB4B090088CFA4 /* CKYSBusinessCollegeFamousTeacherItem.m */; };
 		2CEEBE3B20EE199C00CEA7DD /* CKYSFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEBE3A20EE199C00CEA7DD /* CKYSFileUtils.m */; };
+		2CEEBE3E20EE381900CEA7DD /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEBE3C20EE381800CEA7DD /* NSString+MD5.m */; };
+		2CEEBE4120EE388000CEA7DD /* CKYSBusinessCollegeBannerImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEBE4020EE388000CEA7DD /* CKYSBusinessCollegeBannerImageCache.m */; };
 		C5B1230BEAAA55C57C40C784 /* libPods-CKYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD9513738C930D2354EC1CC /* libPods-CKYS.a */; };
 /* End PBXBuildFile section */
 
@@ -179,6 +181,10 @@
 		2CC1D77020EB59AD0088CFA4 /* CKYSBusinessCollegeTitleMoreButtonViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeTitleMoreButtonViewDelegate.h; sourceTree = "<group>"; };
 		2CEEBE3920EE199C00CEA7DD /* CKYSFileUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSFileUtils.h; sourceTree = "<group>"; };
 		2CEEBE3A20EE199C00CEA7DD /* CKYSFileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSFileUtils.m; sourceTree = "<group>"; };
+		2CEEBE3C20EE381800CEA7DD /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		2CEEBE3D20EE381900CEA7DD /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		2CEEBE3F20EE388000CEA7DD /* CKYSBusinessCollegeBannerImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeBannerImageCache.h; sourceTree = "<group>"; };
+		2CEEBE4020EE388000CEA7DD /* CKYSBusinessCollegeBannerImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeBannerImageCache.m; sourceTree = "<group>"; };
 		575EC7C9280CF5C7FCA1F68A /* Pods-CKYS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.release.xcconfig"; sourceTree = "<group>"; };
 		6C1B781BDA07FBA5822D3D3E /* Pods-CKYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,6 +319,8 @@
 		2C1A9EFF20EE022600E21FEA /* Const */ = {
 			isa = PBXGroup;
 			children = (
+				2CEEBE3D20EE381900CEA7DD /* NSString+MD5.h */,
+				2CEEBE3C20EE381800CEA7DD /* NSString+MD5.m */,
 				2C1A9F0020EE023D00E21FEA /* CKYSScreenConst.h */,
 			);
 			path = Const;
@@ -323,6 +331,8 @@
 			children = (
 				2C1A9F4020EE16FC00E21FEA /* CKYSBusinessCollegeCache.h */,
 				2C1A9F4120EE16FC00E21FEA /* CKYSBusinessCollegeCache.m */,
+				2CEEBE3F20EE388000CEA7DD /* CKYSBusinessCollegeBannerImageCache.h */,
+				2CEEBE4020EE388000CEA7DD /* CKYSBusinessCollegeBannerImageCache.m */,
 			);
 			path = CKYSBusinessCollegeCache;
 			sourceTree = "<group>";
@@ -848,11 +858,13 @@
 				2C1A9EE720ED12E000E21FEA /* CKYSBusinessCollegeItem.m in Sources */,
 				2C44C8BC20EC61B400ABD85D /* CKYSBusinessCollegeBannerCell.m in Sources */,
 				2C1A9F4220EE16FC00E21FEA /* CKYSBusinessCollegeCache.m in Sources */,
+				2CEEBE4120EE388000CEA7DD /* CKYSBusinessCollegeBannerImageCache.m in Sources */,
 				2CC1D76720EB47800088CFA4 /* CKYSBusinessCollegeFamousTeacherCell.m in Sources */,
 				2CC1D73A20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListCell.m in Sources */,
 				2C1A9EB720ECA4DC00E21FEA /* CKYSBCCourseDetailViewController.m in Sources */,
 				2CC1D75720EB17830088CFA4 /* CKYSBusinessCollegeExcellentCourseItemCell.m in Sources */,
 				2C1A9EBD20ECA7F800E21FEA /* CKYSBCTeacherDetailViewController.m in Sources */,
+				2CEEBE3E20EE381900CEA7DD /* NSString+MD5.m in Sources */,
 				2C1A9EBA20ECA6E300E21FEA /* CKYSBCTeacherListViewController.m in Sources */,
 				2C1A9EF420ED158A00E21FEA /* CKYSBusinessCollegeTopnewsItem.m in Sources */,
 				2CC1D74620EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItemCell.m in Sources */,

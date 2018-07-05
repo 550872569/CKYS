@@ -27,6 +27,8 @@
 
 #import "CKYSScreenConst.h"
 
+#import "CKYSBusinessCollegeCache.h"
+
 @interface CKYSBusinessCollegeViewController ()
 
 <CKYSBusinessCollegeTableViewDelegate>
@@ -34,6 +36,7 @@
 @property (nonatomic, strong) CKYSBusinessCollegeTableView *tableView;
 /** 服务端返回的数据模型 */
 @property (nonatomic, strong) CKYSBusinessCollegeItem *businessCollegeItem;
+@property (nonatomic, strong) CKYSBusinessCollegeCache *businessCollegeCache;
 
 @end
 
@@ -177,7 +180,8 @@
         
         _businessCollegeItem = businessCollegeItem.mutableCopy;
         [weakSelf.tableView setBusinessCollegeItem:_businessCollegeItem];
-        
+        _businessCollegeCache = [[CKYSBusinessCollegeCache alloc] init];
+        [_businessCollegeCache saveBusinessCollegeData:_businessCollegeItem.mutableCopy];
     } failure:^(NSError *error) {
         
     }];
