@@ -28,6 +28,7 @@
 #import "CKYSScreenConst.h"
 
 #import "CKYSBusinessCollegeCache.h"
+#import "CKYSBusinessCollegeCache.h"
 
 @interface CKYSBusinessCollegeViewController ()
 
@@ -53,6 +54,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadBusinessCollegeDataOnDisk];
     [self loadBusinessCollegeDataOnceOf];
 }
 
@@ -174,13 +176,29 @@
 
 #pragma mark - Data
 
+- (void)loadBusinessCollegeDataOnDisk {
+    if (!_businessCollegeCache) {
+        _businessCollegeCache = [[CKYSBusinessCollegeCache alloc] init];
+        _businessCollegeItem =  [_businessCollegeCache loadBusinessCollegeData];
+        if (_businessCollegeItem) {
+            [self.tableView setBusinessCollegeItem:_businessCollegeItem];
+        }
+    }
+}
+
 - (void)loadBusinessCollegeDataOnceOf {
     __typeof(self)weakSelf = self;
     [CKYSBusinessCollegeService postBusinessCollegeServiceSuccess:^(CKYSBusinessCollegeItem *businessCollegeItem) {
-        
+        //0 refresh UI
         _businessCollegeItem = businessCollegeItem.mutableCopy;
-        [weakSelf.tableView setBusinessCollegeItem:_businessCollegeItem];
+        __typeof(self)strongSelf = weakSelf;
+        
+        [strongSelf.tableView setBusinessCollegeItem:_businessCollegeItem];
+        
+        //1. delete Disk
         _businessCollegeCache = [[CKYSBusinessCollegeCache alloc] init];
+        [_businessCollegeCache deleteBusinessCollegeData];
+        //2. save to Disk
         [_businessCollegeCache saveBusinessCollegeData:_businessCollegeItem.mutableCopy];
     } failure:^(NSError *error) {
         

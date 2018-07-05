@@ -20,4 +20,7 @@
 
 - (void)setBannerItems:(NSArray <CKYSBusinessCollegeBannerItem *>*)bannerItems;
 
+/** imageName */
+- (void)setCacheBannerItems:(NSArray <UIImage *>*)cacheBannerItems;
+
 @end

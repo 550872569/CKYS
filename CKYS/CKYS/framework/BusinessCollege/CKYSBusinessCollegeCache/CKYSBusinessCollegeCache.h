@@ -12,8 +12,13 @@
 
 @interface CKYSBusinessCollegeCache : NSObject
 
-- (BOOL)saveBusinessCollegeData:(CKYSBusinessCollegeItem *)businessCollegeItem;
+/** 0. loadData in Disk */
+- (CKYSBusinessCollegeItem *)loadBusinessCollegeData;
 
-- (CKYSBusinessCollegeItem *)readBusinessCollegeData;
+/** 1. request success delete */
+- (void)deleteBusinessCollegeData;
+
+/** 2. request success save */
+- (void)saveBusinessCollegeData:(CKYSBusinessCollegeItem *)businessCollegeItem;
 
 @end

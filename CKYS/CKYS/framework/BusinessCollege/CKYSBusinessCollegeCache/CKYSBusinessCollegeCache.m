@@ -26,18 +26,30 @@
     return self;
 }
 
-- (BOOL)saveBusinessCollegeData:(CKYSBusinessCollegeItem *)businessCollegeItem {
-    
-    NSMutableDictionary *dict = [businessCollegeItem mj_keyValues];
-    [[NSUserDefaults standardUserDefaults] setValue:dict forKey:_fileName];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-    return true;
+- (void)saveBusinessCollegeData:(CKYSBusinessCollegeItem *)businessCollegeItem {
+    @synchronized(self) {
+        NSMutableDictionary *dict = [businessCollegeItem mj_keyValues];
+        [[NSUserDefaults standardUserDefaults] setValue:dict forKey:_fileName];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
-- (CKYSBusinessCollegeItem *)readBusinessCollegeData {
-    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:_fileName];
-    CKYSBusinessCollegeItem *item = [CKYSBusinessCollegeItem mj_objectWithKeyValues:dict];
+- (CKYSBusinessCollegeItem *)loadBusinessCollegeData {
+    CKYSBusinessCollegeItem *item;
+    @synchronized(self) {
+        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:_fileName];
+        item = [CKYSBusinessCollegeItem mj_objectWithKeyValues:dict];
+    }
     return item;
+}
+
+
+/** 1. request success delete */
+- (void)deleteBusinessCollegeData {
+    @synchronized(self) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:_fileName];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 @end

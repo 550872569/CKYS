@@ -18,7 +18,7 @@
 
 @property (nonatomic, strong) SDCycleScrollView *bannerView;
 
-@property (nonatomic, strong) NSMutableArray <CKYSBusinessCollegeBannerItem *>*dataArray;
+@property (nonatomic, strong) NSMutableArray <NSString *>*dataArray;
 
 @property (nonatomic, weak) id<CKYSBusinessCollegeBannerCellDelegate> delegate;
 
@@ -99,6 +99,10 @@
     }];
     _bannerView.imageURLStringsGroup = _dataArray;
     [_bannerView setNeedsDisplay];
+}
+
+- (void)setCacheBannerItems:(NSArray <NSString *>*)cacheBannerItems {
+    [_bannerView setLocalizationImageNamesGroup:cacheBannerItems];
 }
 
 @end
