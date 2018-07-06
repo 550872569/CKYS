@@ -15,10 +15,12 @@
     NSString *_filePath;
 }
 
+#define CKYS_BC_CACHE_CONST  @"ckysBusinessCollegeCache"
+
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _fileName = @"ckysBusinessCollegeCache";
+        _fileName = CKYS_BC_CACHE_CONST;
         NSString *businessCollegeCachePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         businessCollegeCachePath = [businessCollegeCachePath stringByAppendingPathComponent:_fileName];
         _filePath = businessCollegeCachePath.copy;
@@ -50,6 +52,15 @@
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:_fileName];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
+}
+
++ (BOOL)isNeedRequestBusinessCollegeService {
+    __block BOOL result = NO;
+    @synchronized(self) {
+        NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:CKYS_BC_CACHE_CONST];
+        result = !([[dict valueForKey:@"code"] isEqualToString:@"200"] || [[dict valueForKey:@"code"]isEqualToString:@"206"]);
+    }
+    return result;
 }
 
 @end

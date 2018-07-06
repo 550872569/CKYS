@@ -21,19 +21,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initKeywindowAndRootViewController];
-//    [self loadBusinessCollegeDataOnceOf];
     return YES;
 }
-
-//- (void)loadBusinessCollegeDataOnceOf {
-//    [CKYSBusinessCollegeService postBusinessCollegeServiceSuccess:^(CKYSBusinessCollegeItem *businessCollegeItem) {
-//        NSLog(@"item%@",businessCollegeItem);
-//
-//    } failure:^(NSError *error) {
-//
-//    }];
-//}
-
 
 @end
 

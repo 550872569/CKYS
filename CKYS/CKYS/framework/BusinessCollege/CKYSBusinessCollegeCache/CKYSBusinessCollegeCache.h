@@ -21,4 +21,6 @@
 /** 2. request success save */
 - (void)saveBusinessCollegeData:(CKYSBusinessCollegeItem *)businessCollegeItem;
 
++ (BOOL)isNeedRequestBusinessCollegeService;
+
 @end

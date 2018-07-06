@@ -53,6 +53,8 @@
 		2CC1D76F20EB4B090088CFA4 /* CKYSBusinessCollegeFamousTeacherItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC1D76E20EB4B090088CFA4 /* CKYSBusinessCollegeFamousTeacherItem.m */; };
 		2CEEBE3B20EE199C00CEA7DD /* CKYSFileUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEBE3A20EE199C00CEA7DD /* CKYSFileUtils.m */; };
 		2CEEBE3E20EE381900CEA7DD /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEBE3C20EE381800CEA7DD /* NSString+MD5.m */; };
+		2CEEBE4420EEEDD300CEA7DD /* CKYSBusinessCollegeServiceHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEBE4320EEEDD300CEA7DD /* CKYSBusinessCollegeServiceHelp.m */; };
+		2CEEBE4820EF06F700CEA7DD /* CKYSBusinessCollegeObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEBE4720EF06F700CEA7DD /* CKYSBusinessCollegeObserver.m */; };
 		C5B1230BEAAA55C57C40C784 /* libPods-CKYS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD9513738C930D2354EC1CC /* libPods-CKYS.a */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +184,10 @@
 		2CEEBE3A20EE199C00CEA7DD /* CKYSFileUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSFileUtils.m; sourceTree = "<group>"; };
 		2CEEBE3C20EE381800CEA7DD /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		2CEEBE3D20EE381900CEA7DD /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		2CEEBE4220EEEDD300CEA7DD /* CKYSBusinessCollegeServiceHelp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeServiceHelp.h; sourceTree = "<group>"; };
+		2CEEBE4320EEEDD300CEA7DD /* CKYSBusinessCollegeServiceHelp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeServiceHelp.m; sourceTree = "<group>"; };
+		2CEEBE4620EF06F700CEA7DD /* CKYSBusinessCollegeObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CKYSBusinessCollegeObserver.h; sourceTree = "<group>"; };
+		2CEEBE4720EF06F700CEA7DD /* CKYSBusinessCollegeObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CKYSBusinessCollegeObserver.m; sourceTree = "<group>"; };
 		575EC7C9280CF5C7FCA1F68A /* Pods-CKYS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.release.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.release.xcconfig"; sourceTree = "<group>"; };
 		6C1B781BDA07FBA5822D3D3E /* Pods-CKYS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CKYS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CKYS/Pods-CKYS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -299,6 +305,8 @@
 			children = (
 				2C1A9EF820EDADDC00E21FEA /* CKYSBusinessCollegeService.h */,
 				2C1A9EF920EDADDC00E21FEA /* CKYSBusinessCollegeService.m */,
+				2CEEBE4220EEEDD300CEA7DD /* CKYSBusinessCollegeServiceHelp.h */,
+				2CEEBE4320EEEDD300CEA7DD /* CKYSBusinessCollegeServiceHelp.m */,
 			);
 			path = CKYSBusinessCollegeService;
 			sourceTree = "<group>";
@@ -306,8 +314,9 @@
 		2C1A9EFE20EDFE5A00E21FEA /* BusinessCollege */ = {
 			isa = PBXGroup;
 			children = (
-				2C1A9F3F20EE16DA00E21FEA /* CKYSBusinessCollegeCache */,
+				2CEEBE4520EF06D600CEA7DD /* Observer */,
 				2C1A9EFD20EDFB9C00E21FEA /* CKYSBusinessCollegeService */,
+				2C1A9F3F20EE16DA00E21FEA /* CKYSBusinessCollegeCache */,
 				2CC1D75C20EB28FE0088CFA4 /* CKYSBusinessCollegeItem */,
 			);
 			path = BusinessCollege;
@@ -648,6 +657,15 @@
 			path = FamousTeacher;
 			sourceTree = "<group>";
 		};
+		2CEEBE4520EF06D600CEA7DD /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				2CEEBE4620EF06F700CEA7DD /* CKYSBusinessCollegeObserver.h */,
+				2CEEBE4720EF06F700CEA7DD /* CKYSBusinessCollegeObserver.m */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
 		4865B4A625A48E3E75AB479E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,6 +864,7 @@
 				2CC1D6B620EB05E10088CFA4 /* main.m in Sources */,
 				2C1A9EC120ECA95300E21FEA /* CKYSBCSearchViewController.m in Sources */,
 				2CC1D6E120EB09940088CFA4 /* CKYSBusinessCollegeViewController.m in Sources */,
+				2CEEBE4820EF06F700CEA7DD /* CKYSBusinessCollegeObserver.m in Sources */,
 				2C1A9EC520ECAFB200E21FEA /* CKYSBCSearchItem.m in Sources */,
 				2C1A9EDD20ED079A00E21FEA /* CKYSNetworkTool.m in Sources */,
 				2C44C8C520EC910500ABD85D /* CKYSBCExcellentCourseViewController.m in Sources */,
@@ -869,6 +888,7 @@
 				2CC1D74520EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceItem.m in Sources */,
 				2CC1D74720EB0A210088CFA4 /* CKYSBusinessCollegeWorkplaceCell.m in Sources */,
 				2CC1D73C20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItem.m in Sources */,
+				2CEEBE4420EEEDD300CEA7DD /* CKYSBusinessCollegeServiceHelp.m in Sources */,
 				2CEEBE3B20EE199C00CEA7DD /* CKYSFileUtils.m in Sources */,
 				2CC1D73B20EB0A0B0088CFA4 /* CKYSBusinessCollegeFreshListItemCell.m in Sources */,
 				2C1A9EFA20EDADDC00E21FEA /* CKYSBusinessCollegeService.m in Sources */,

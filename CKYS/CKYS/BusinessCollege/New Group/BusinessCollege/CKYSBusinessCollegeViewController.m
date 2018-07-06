@@ -30,6 +30,10 @@
 #import "CKYSBusinessCollegeCache.h"
 #import "CKYSBusinessCollegeCache.h"
 
+#import "CKYSBusinessCollegeServiceHelp.h"
+
+#import "CKYSBusinessCollegeObserver.h"
+
 @interface CKYSBusinessCollegeViewController ()
 
 <CKYSBusinessCollegeTableViewDelegate>
@@ -54,12 +58,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self loadBusinessCollegeDataOnDisk];
     [self loadBusinessCollegeDataOnceOf];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [CKYSBusinessCollegeObserver registerApplicationWillTerminateNotificationWithObserver:self sel:@selector(private_ApplicationWillTerminate:)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -186,7 +192,16 @@
     }
 }
 
+- (void)private_ApplicationWillTerminate:(NSNotification *)sender {
+    /** 退出应用需要重新请求服务端数据 */
+    [CKYSBusinessCollegeServiceHelp setRequestBusinessCollegeServiceStatusSuccess:false];
+}
+
 - (void)loadBusinessCollegeDataOnceOf {
+    if (![CKYSBusinessCollegeServiceHelp isNeedRequestBusinessCollegeService]) {
+        NSLog(@"本地有缓存，无需在点击时请求服务端");
+        return;
+    }
     __typeof(self)weakSelf = self;
     [CKYSBusinessCollegeService postBusinessCollegeServiceSuccess:^(CKYSBusinessCollegeItem *businessCollegeItem) {
         //0 refresh UI
@@ -203,6 +218,12 @@
     } failure:^(NSError *error) {
         
     }];
+}
+
+
+- (void)dealloc {
+    [CKYSBusinessCollegeObserver unregisterApplicationWillTerminateNotificationWithObserver:self];
+    NSLog(@"self:%@",self);
 }
 
 @end

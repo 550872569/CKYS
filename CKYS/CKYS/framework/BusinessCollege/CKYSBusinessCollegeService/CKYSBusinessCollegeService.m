@@ -10,6 +10,7 @@
 #import "CKYSNetworkTool.h"
 #import "MJExtension.h"
 #import "CKYSBusinessCollegeItem.h"
+#import "CKYSBusinessCollegeServiceHelp.h"
 
 @implementation CKYSBusinessCollegeService
 
@@ -39,8 +40,10 @@
     [dictParams setValue:@"0" forKey:@"tgid"];
     
     [self.class postWithUrl:URL params:dictParams success:^(CKYSBusinessCollegeItem *businessCollegeItem) {
-       
-        completeHandle(businessCollegeItem);
+        if (businessCollegeItem.isRequestCompleteHandleSuccess) {
+            [CKYSBusinessCollegeServiceHelp setRequestBusinessCollegeServiceStatusSuccess:true];
+            completeHandle(businessCollegeItem);
+        }
     } failure:^(NSError *error) {
         failure(error);
     }];
