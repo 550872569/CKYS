@@ -90,7 +90,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
 - (void)initItemView {
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
-    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     flowLayout.minimumInteritemSpacing = 0;
     flowLayout.minimumLineSpacing = 0;
     _businessCollegeExcellentCourseItemView.showsHorizontalScrollIndicator = NO;
@@ -102,7 +102,6 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     _businessCollegeExcellentCourseItemView.dataSource = self;
     _businessCollegeExcellentCourseItemView.showsHorizontalScrollIndicator = NO;
     [self.contentView addSubview:_businessCollegeExcellentCourseItemView];
-    
     [_businessCollegeExcellentCourseItemView mas_makeConstraints:^(MASConstraintMaker *make) {
         
         make.top.equalTo(_titleMoreButtonView.mas_bottom);
@@ -195,6 +194,7 @@ CKYSBusinessCollegeTitleMoreButtonViewDelegate>
     [_dataArray addObjectsFromArray:ediaReportItems];
     [_dataArray addObjectsFromArray:ediaReportItems];
     [_dataArray addObjectsFromArray:ediaReportItems];
+    [_dataArray removeObjectAtIndex:0];
     [_businessCollegeExcellentCourseItemView reloadData];
 }
 
